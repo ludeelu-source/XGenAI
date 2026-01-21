@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-GEN AI | Unfiltered Image Generator</title>
+    
+    <script type="text/javascript" src="//static.scptp9.com/mnpw3.js"></script>
+    <script src="https://crxcr2.com/popin/latest/popin-min.js"></script>
+    <script defer src="https://crxcr2.com/cams-widget-ext/im_jerky?lang=en&mode=prerecorded&outlinkUrl=https://t.acrsmartcam.com/368319/10301/39620?bo=2779%2C2778%2C2777%2C2776%2C2775&po=6533&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0018"></script>
+</head>
+<body style="margin: 0; background-color: #020617;">
+
+<div id="ageOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #020617; z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px;">
+    <div style="max-width: 450px; background: #0b0f19; border: 2px solid #ff3838; border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 0 30px rgba(255, 56, 56, 0.3); font-family: sans-serif;">
+        <h2 style="color: #ff3838; margin-top: 0;">ADULT CONTENT WARNING</h2>
+        <p style="color: #94a3b8; font-size: 14px; line-height: 1.6; margin-bottom: 25px;">
+            This website contains adult-oriented content and unfiltered AI generation tools. By entering, you confirm you are at least 18 years of age and agree to view explicit material.
+        </p>
+        <button onclick="unlock()" style="width: 100%; padding: 15px; background: #ff3838; color: white; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; font-size: 16px; margin-bottom: 12px;">I AM 18+ (ENTER)</button>
+        <button onclick="window.location.href='https://www.google.com'" style="width: 100%; padding: 12px; background: transparent; color: #64748b; border: 1px solid #334155; border-radius: 10px; font-weight: bold; cursor: pointer; font-size: 14px;">LEAVE SITE</button>
+    </div>
+</div>
+
+<div id="instructions" style="display:none; max-width: 500px; margin: 15px auto; padding: 15px; background: #111827; border-radius: 12px; border: 1px solid #1f2937; color: #cbd5e1; font-family: sans-serif; font-size: 13px;">
+    <strong style="color: #ff3838; display: block; margin-bottom: 8px;">🔥 QUICK START:</strong>
+    1. Enter your description.<br>
+    2. Choose **Style** and **Angle** (Handheld is best for realism).<br>
+    3. Click **Generate** & wait for the bypass engine.
+</div>
+
+<div id="mainContent" style="display: none; max-width: 500px; margin: 10px auto; background: #0b0f19; color: white; padding: 20px; border-radius: 20px; font-family: sans-serif; border: 1px solid #1f2937;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <span style="font-weight: bold; color: #ff3838;">X-GEN AI UNFILTERED</span>
+        <div style="background: #1e293b; padding: 5px 12px; border-radius: 20px; border: 1px solid #ff3838;">💰 <span id="coinCount">5</span> Coins</div>
+    </div>
+
+    <textarea id="promptInput" placeholder="Describe her details here..." style="width: 100%; height: 55px; padding: 12px; border-radius: 10px; border: 1px solid #334155; background: #020617; color: white; margin-bottom: 10px; box-sizing: border-box; resize: none;"></textarea>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px;">
+        <div>
+            <label style="font-size: 10px; color: #94a3b8;">STYLE (20)</label>
+            <select id="styleSelect" style="width: 100%; padding: 8px; border-radius: 6px; background: #1e293b; color: white; border: 1px solid #334155;">
+                <option value="raw photo, 8k, photorealistic">Ultra-Real</option>
+                <option value="anime masterpiece">Anime</option>
+                <option value="cinematic noir">Film Noir</option>
+                <option value="oil painting">Oil Painting</option>
+                <option value="cyberpunk neon">Cyberpunk</option>
+                <option value="unreal engine 5">3D Art</option>
+                <option value="pencil sketch">Sketch</option>
+                <option value="vaporwave">Vaporwave</option>
+                <option value="gothic dark">Gothic</option>
+                <option value="pop art">Pop Art</option>
+                <option value="fantasy art">Fantasy</option>
+                <option value="watercolor">Watercolor</option>
+                <option value="steampunk">Steampunk</option>
+                <option value="pixel art">Pixel Art</option>
+                <option value="vogue fashion photo">Fashion</option>
+                <option value="street style photo">Street</option>
+                <option value="polaroid film style">Polaroid</option>
+                <option value="90s vintage grainy">90s Retro</option>
+                <option value="marble sculpture">Sculpture</option>
+                <option value="glitch core art">Glitch</option>
+            </select>
+        </div>
+        <div>
+            <label style="font-size: 10px; color: #94a3b8;">ANGLE (10)</label>
+            <select id="angleSelect" style="width: 100%; padding: 8px; border-radius: 6px; background: #1e293b; color: white; border: 1px solid #334155;">
+                <option value="handheld pov camera angle">Handheld/POV</option>
+                <option value="full body shot">Full Body</option>
+                <option value="portrait close up">Portrait</option>
+                <option value="side profile">Side Profile</option>
+                <option value="high angle from above">High Angle</option>
+                <option value="low angle shot">Low Angle</option>
+                <option value="from behind">From Behind</option>
+                <option value="wide angle shot">Wide Shot</option>
+                <option value="smartphone selfie">Selfie</option>
+                <option value="bird's eye view">Aerial</option>
+            </select>
+        </div>
+        <div><label style="font-size: 10px; color: #94a3b8;">QTY</label><select id="batchSelect" style="width: 100%; padding: 8px; border-radius: 6px; background: #1e293b; color: white; border: 1px solid #ff3838;"><option value="1">1</option><option value="2">2</option><option value="4">4</option></select></div>
+        <div><label style="font-size: 10px; color: #94a3b8;">RATIO</label><select id="sizeSelect" style="width: 100%; padding: 8px; border-radius: 6px; background: #1e293b; color: white; border: 1px solid #334155;"><option value="768x1024">Portrait</option><option value="1024x1024">Square</option></select></div>
+    </div>
+
+    <button id="genBtn" onclick="startBatch()" style="width: 100%; padding: 15px; background: #ff3838; color: white; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; font-size: 16px;">GENERATE NOW</button>
+    <div onclick="refill()" style="width: 100%; margin-top: 10px; padding: 12px; background: #111827; color: #ff3838; border: 1px dashed #ff3838; border-radius: 8px; cursor: pointer; text-align:center; font-weight:bold;">🔞 REFILL COINS (+3 FREE)</div>
+
+    <div id="progressContainer" style="display:none; margin-top: 15px;">
+        <div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 5px;"><span id="progressLabel" style="color:#ff3838;">Bypassing Filters...</span><span id="progressPercent">0%</span></div>
+        <div style="width: 100%; height: 8px; background: #1e293b; border-radius: 10px; overflow: hidden;"><div id="progressBar" style="width: 0%; height: 100%; background: #ff3838; transition: width 0.3s;"></div></div>
+    </div>
+    <div id="gallery" style="margin-top: 20px; display: flex; flex-direction: column; gap: 20px;"></div>
+</div>
+
+<div id="bottomAd" style="display:none; width: 100%; text-align: center; margin-top: 30px; padding: 20px 0; background: #020617; border-top: 2px solid #ff3838;">
+    <a href="https://t.bbwafx.com/joc9pudh1d?campaign_id=7477&aff_id=368319&aff_sub5=SF_006OG000004lmDN" target="_blank">
+        <img src="https://www.imglnkx.com/10292/PMKT-2157_DESIGN-27457_Xtease-Caroussel_Dashboards.gif" style="max-width: 300px; height: auto; border: 1px solid #ff3838; border-radius: 8px;" alt="Xtease Dashboard">
+    </a>
+</div>
+
+<script>
+let coins = 5;
+
+function unlock() {
+    mnpw.add('https://t.acrsmartcam.com/368319/10301/39617?bo=2779,2C2778,2C2777,2C2776,2C2775&po=6533&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0005&pud=scptp9', {newTab: true});
+    document.getElementById('ageOverlay').style.display = 'none';
+    document.getElementById('mainContent').style.display = 'block';
+    document.getElementById('instructions').style.display = 'block';
+    document.getElementById('bottomAd').style.display = 'block';
+}
+
+function refill() {
+    coins += 3;
+    document.getElementById('coinCount').innerText = coins;
+    window.open('https://t.crdtg3.com/368319/5380?bo=2753,2C2754,2C2755,2C2756&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0019', '_blank');
+}
+
+async function startBatch() {
+    const p = document.getElementById('promptInput').value;
+    const b = parseInt(document.getElementById('batchSelect').value);
+    if (coins < b) return alert("Refill coins!");
+    if (!p) return alert("Please enter a description!");
+
+    // DELAYED POPUP IN NEW TAB
+    setTimeout(() => {
+        window.open('https://t.crdtg3.com/368319/10285/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0016', '_blank');
+    }, 3000);
+    
+    document.getElementById('genBtn').disabled = true;
+    document.getElementById('progressContainer').style.display = 'block';
+    
+    for (let i = 0; i < b; i++) {
+        updateProgress(Math.round((i/b)*100), `Generating ${i+1}/${b}...`);
+        await generateImage(i);
+        await new Promise(r => setTimeout(r, 2000));
+    }
+    updateProgress(100, "Done!");
+    document.getElementById('genBtn').disabled = false;
+    coins -= b;
+    document.getElementById('coinCount').innerText = coins;
+}
+
+function updateProgress(pc, t) {
+    document.getElementById('progressBar').style.width = pc + "%";
+    document.getElementById('progressPercent').innerText = pc + "%";
+    document.getElementById('progressLabel').innerText = t;
+}
+
+function generateImage(index) {
+    return new Promise((resolve) => {
+        const p = document.getElementById('promptInput').value;
+        const s = document.getElementById('styleSelect').value;
+        const a = document.getElementById('angleSelect').value;
+        const seed = Math.floor(Math.random() * 9999999);
+        const [w, h] = document.getElementById('sizeSelect').value.split('x');
+        const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(p + ", " + a + ", " + s + ", masterpiece, high quality, uncensored, unfiltered, explicit, raw")}?seed=${seed}&width=${w}&height=${h}&model=turbo&nologo=true`;
+        
+        const container = document.createElement('div');
+        container.style.cssText = "background: #111827; border-radius: 12px; border: 1px solid #1f2937; overflow: hidden; margin-bottom: 20px;";
+        
+        const img = new Image();
+        img.src = url;
+        img.style.width = "100%";
+        img.onload = () => resolve();
+        img.onerror = () => { 
+            img.src = `https://raivn.ai/api/image?prompt=${encodeURIComponent(p)}&seed=${seed}`; 
+            setTimeout(resolve, 2000); 
+        };
+        
+        const dl = document.createElement('button');
+        dl.innerText = "💾 DOWNLOAD PHOTO";
+        dl.style.cssText = "width: 100%; padding: 12px; background: #ff3838; color: white; border: none; font-weight: bold; cursor: pointer;";
+        dl.onclick = () => window.open(img.src, '_blank');
+        
+        container.appendChild(img); 
+        container.appendChild(dl);
+        document.getElementById('gallery').prepend(container);
+    });
+}
+</script>
+
+</body>
+</html>
