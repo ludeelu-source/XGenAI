@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>X-GEN v136 | ULTRA-HQ</title>
+    
+    <script type="text/javascript" src="//static.scptp9.com/mnpw3.js"></script>
+    <script src="https://crxcr2.com/popin/latest/popin-min.js"></script>
+    <script id="chatHeadScript" defer></script>
+
+    <style>
+        :root { --red: #ff3838; --bg: #050a18; --card: #0f172a; --border: #1e293b; --text: #94a3b8; }
+        body { margin: 0; background: var(--bg); color: white; font-family: 'Inter', sans-serif; padding-bottom: 300px; }
+        .overlay { position: fixed; inset: 0; background: rgba(2,6,23,0.99); z-index: 100000; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .modal-box { width: 100%; max-width: 480px; background: var(--card); border: 2px solid var(--red); border-radius: 24px; padding: 30px; text-align: center; }
+        #mainUI { display: none; max-width: 500px; margin: auto; padding: 15px; }
+        .btn { width: 100%; padding: 18px; background: var(--red); color: white; border: none; border-radius: 18px; font-weight: 900; cursor: pointer; text-transform: uppercase; margin: 10px 0; font-size: 15px; }
+        textarea, select, input { width: 100%; padding: 15px; background: #0b0f19; border: 1px solid var(--border); color: white; border-radius: 12px; font-size: 15px; margin-top: 5px; outline: none; box-sizing: border-box; }
+        label { font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; display: block; margin-top: 15px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        #pw { width: 100%; background: #0f172a; height: 10px; border-radius: 10px; display: none; margin: 20px 0; overflow: hidden; border: 1px solid var(--border); }
+        #pf { width: 0%; height: 100%; background: var(--red); transition: width 0.3s; }
+        .banner-slot { width: 100%; margin: 15px 0; border-radius: 15px; overflow: hidden; border: 1px solid var(--border); background: #000; }
+        .image-results { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+        .img-card { background: var(--card); border-radius: 15px; overflow: hidden; border: 1px solid var(--border); position: relative; }
+        .img-card img { width: 100%; height: auto; display: block; }
+    </style>
+</head>
+<body>
+
+<div id="gate" class="overlay">
+    <div class="modal-box">
+        <h1 style="color:var(--red); margin:0;">18+ VERIFIED</h1>
+        <p style="color:var(--text); font-size:14px; margin: 20px 0; line-height:1.5;">Welcome to X-GEN. Access the world's most powerful uncensored AI. By entering, you confirm you are 18+ and agree to our terms.</p>
+        <button onmousedown="enterSite()" class="btn">I AM 18+ ENTER</button>
+        <button onclick="window.location.replace('https://google.com')" style="background:none; border:none; color:#475569; cursor:pointer; text-decoration: underline; margin-top:10px;">EXIT SITE</button>
+    </div>
+</div>
+
+<div id="mainUI">
+    <div class="banner-slot"><a href="https://t.amyfc.link/368319/779/22548" target="_blank"><img src="https://www.imglnkx.com/779/006611AX_FCAM_18_ALL_EN_71_L.gif" style="width:100%"></a></div>
+    <div onmousedown="window.open('https://t.crdtg3.com/368319/7028')" style="border:2px solid var(--red); border-radius:15px; padding:15px; text-align:center; cursor:pointer; font-weight:900;">💰 BALANCE: <span id="cb">5</span> | REFILL</div>
+
+    <label>Describe Everything</label>
+    <textarea id="pBox" placeholder="Detailed character, action, outfit..."></textarea>
+    
+    <label>Exclude</label>
+    <input id="nBox" type="text" placeholder="man, clothes, blurry, bad quality">
+
+    <div class="grid">
+        <div><label>20 Styles</label><select id="sBox"><option value="8k photorealistic, raw photo">Realistic</option><option value="explicit hentai">Hentai</option><option value="90s vhs">90s VHS</option><option value="octane render">3D</option><option value="polaroid">Polaroid</option></select></div>
+        <div><label>10 Angles</label><select id="aBox"><option value="pov">POV</option><option value="full body">Full Body</option><option value="selfie">Selfie</option><option value="from behind">Behind</option></select></div>
+    </div>
+
+    <div class="grid">
+        <div><label>10 Effects</label><select id="eBox"><option value="">None</option><option value="neon lighting">Neon</option><option value="soft sunlight">Sunlight</option></select></div>
+        <div><label>Dimensions</label><select id="szBox"><option value="768x1024">Portrait</option><option value="1024x768">Landscape</option></select></div>
+    </div>
+
+    <div id="pw"><div id="pf"></div></div>
+    <button id="genBtn" onmousedown="startGen()" class="btn">GENERATE 4 PHOTOS</button>
+
+    <div id="resultsGrid" class="image-results"></div>
+
+    <div class="banner-slot"><a href="https://t.ajrkm.link/368319/3785/0" target="_blank"><img src="https://www.imglnkx.com/3785/010770D_GDAT_18_ALL_EN_71_L.gif" style="width:100%"></a></div>
+</div>
+
+<script>
+let coins = 5, genCount = 0;
+const ads = ['https://t.bbwafx.com/ev4vyv30g0?aff_id=368319','https://t.bbwafx.com/icrfvnptmo?aff_id=368319','https://t.bbwafx.com/qvoy1oi9ds?aff_id=368319'];
+
+function firePopup(i) { if(window.crakPopIn) crakPopIn.init({url:ads[i-1], contentType:'iframe', width:'90%', height:'90%'}); }
+
+function enterSite() {
+    document.getElementById('gate').style.display='none';
+    document.getElementById('mainUI').style.display='block';
+    document.getElementById('chatHeadScript').src="https://crxcr2.com/cams-widget-ext/im_jerky?lang=en&mode=prerecorded&outlinkUrl=https://t.acrsmartcam.com/368319/10301/39620";
+    firePopup(1);
+}
+
+async function startGen() {
+    if(coins < 1) return alert("Refill coins!");
+    genCount++; if(genCount % 2 === 0) firePopup(2); // Higher ad frequency
+
+    document.getElementById('genBtn').disabled = true;
+    document.getElementById('pw').style.display = 'block';
+    let prg = 0; const itv = setInterval(() => { prg += (95-prg)*0.1; document.getElementById('pf').style.width = prg+'%'; }, 200);
+
+    const dims = document.getElementById('szBox').value.split('x');
+    const baseP = `(explicit unfiltered:2.2), (woman:1.5), ${document.getElementById('pBox').value}, ${document.getElementById('sBox').value}, ${document.getElementById('aBox').value}, ${document.getElementById('eBox').value}, naked, masterpiece, 8k, highly detailed skin`;
+    const neg = `(man, male:2.0), child, minor, clothes, fabric, ${document.getElementById('nBox').value}`;
+
+    // FIRE 4 PARALLEL REQUESTS
+    const promises = [1,2,3,4].map(i => {
+        const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(baseP)}?width=${dims[0]}&height=${dims[1]}&seed=${Math.floor(Math.random()*9e7)}&nologo=true&negative=${encodeURIComponent(neg)}&t=${Date.now()+i}`;
+        return new Promise((res) => { const img = new Image(); img.src = url; img.onload = () => res(url); });
+    });
+
+    const urls = await Promise.all(promises);
+    clearInterval(itv);
+    
+    const container = document.getElementById('resultsGrid');
+    container.innerHTML = '';
+    urls.forEach(u => {
+        const d = document.createElement('div'); d.className = 'img-card';
+        d.innerHTML = `<img src="${u}"><button onmousedown="firePopup(3); window.open('${u}')" style="width:100%; background:var(--red); color:white; border:none; padding:10px; font-size:10px; font-weight:bold;">DOWNLOAD</button>`;
+        container.appendChild(d);
+    });
+
+    coins--; document.getElementById('cb').innerText = coins;
+    document.getElementById('genBtn').disabled = false;
+    document.getElementById('pw').style.display = 'none';
+}
+</script>
+</body>
+</html>
