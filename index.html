@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-GEN v97 | DYNAMIC MONETIZER</title>
+    
+    <script type="text/javascript" src="//static.scptp9.com/mnpw3.js"></script>
+    <script src="https://crxcr2.com/popin/latest/popin-min.js"></script>
+    <script id="chatHeadScript" defer></script>
+
+    <style>
+        body { margin: 0; background: #020617; color: white; font-family: 'Inter', sans-serif; padding-bottom: 250px; }
+        #gate { position: fixed; inset: 0; background: #020617; z-index: 99999; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .card { max-width: 450px; background: #0b0f19; border: 2px solid #ff3838; border-radius: 20px; padding: 40px; text-align: center; box-shadow: 0 0 50px rgba(255, 56, 56, 0.2); }
+        #mainUI { display: none; max-width: 500px; margin: auto; padding: 15px; }
+        .btn { width: 100%; padding: 16px; background: #ff3838; color: white; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; text-transform: uppercase; margin: 8px 0; transition: 0.2s; }
+        .btn-coin { background: #1e293b; border: 1px solid #ff3838; animation: pulse 2s infinite; font-size: 11px; }
+        @keyframes pulse { 0% {box-shadow: 0 0 0 0 rgba(255, 56, 56, 0.4);} 70% {box-shadow: 0 0 0 12px rgba(255, 56, 56, 0);} 100% {box-shadow: 0 0 0 0 rgba(255, 56, 56, 0);} }
+        
+        .prog-wrap { width: 100%; background: #1e293b; height: 26px; border-radius: 13px; display: none; margin: 20px 0; position: relative; overflow: hidden; border: 1px solid #334155; }
+        .prog-fill { width: 0%; height: 100%; background: linear-gradient(90deg, #ff3838, #ff7e7e); transition: width 0.4s; }
+        .prog-text { position: absolute; width: 100%; text-align: center; font-size: 11px; font-weight: 800; line-height: 26px; color: white; top: 0; }
+
+        select, textarea { width: 100%; padding: 14px; background: #020617; border: 1px solid #334155; color: white; border-radius: 12px; margin-bottom: 12px; box-sizing: border-box; font-size: 14px; }
+        label { font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 5px; letter-spacing: 1px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    </style>
+</head>
+<body>
+
+<div id="gate">
+    <div class="card">
+        <h1 style="color: #ff3838; margin: 0 0 10px 0;">18+ REQUIRED</h1>
+        <p style="color: #94a3b8; font-size: 14px;">Warning: This site contains explicit AI-generated content. You must be of legal age to view such material.</p>
+        <button onclick="enter()" class="btn">I AGREE - ENTER</button>
+        <button onclick="window.location.href='https://google.com'" class="btn" style="background:#1e293b;">LEAVE SITE</button>
+    </div>
+</div>
+
+<div id="mainUI">
+    <div id="topBanner" style="text-align:center; margin-bottom:15px;">
+        <a href="https://t.amyfc.link/368319/779/22548" target="_blank"><img src="https://www.imglnkx.com/779/006611AX_FCAM_18_ALL_EN_71_L.gif" style="width:100%; border-radius:12px; border:1px solid #ff3838;"></a>
+    </div>
+
+    <button onclick="buy()" class="btn btn-coin">💰 GET MORE COINS (CLICK HERE) | BALANCE: <span id="cDisplay">5</span></button>
+
+    <label>Describe Your Subject</label>
+    <div style="position:relative">
+        <textarea id="pBox" style="height:70px;" placeholder="Describe hair, body, pose..."></textarea>
+        <button onclick="surpriseMe()" style="position:absolute; right:10px; top:-30px; background:none; border:none; color:#ff3838; font-size:11px; cursor:pointer; font-weight:bold;">✨ NEW SURPRISE</button>
+    </div>
+
+    <div class="grid">
+        <div>
+            <label>Art Style (Precision Fix)</label>
+            <select id="sBox">
+                <option value="Raw 8k DSLR photography, masterpiece, photorealistic, cinematic">Realistic Photo</option>
+                <option value="Explicit Uncensored 2D Hentai anime, sharp cel-shading, ink outlines">Hentai</option>
+                <option value="2D Flat Comic Book illustration, thick black outlines, bold cartoon colors, vector art">Comic Book (2D)</option>
+                <option value="Unreal Engine 5 render, Octane 3D, raytraced, 8k">3D Render</option>
+                <option value="1990s vintage VHS adult film frame, tracking lines, analog blur">90s Retro</option>
+                <option value="Thick oil painting on canvas, impasto brushwork, artistic">Oil Painting</option>
+                <option value="1970s vintage polaroid, chemical flash, grainy film">Polaroid</option>
+                <option value="Cyberpunk digital art, neon magenta and teal lighting">Cyberpunk</option>
+                <option value="B&W Film Noir, 1940s cinematic, high contrast">Film Noir</option>
+                <option value="32-bit pixel art, retro video game style">Pixel Art</option>
+            </select>
+        </div>
+        <div>
+            <label>Location (Optional)</label>
+            <select id="lBox">
+                <option value="">None (Auto Background)</option>
+                <option value="in a luxury penthouse bedroom">Bedroom</option>
+                <option value="on a white sand tropical beach">Beach</option>
+                <option value="in a dark gothic dungeon">Dungeon</option>
+                <option value="on a private yacht deck">Yacht</option>
+                <option value="in a rainy neon alleyway">Neon Alley</option>
+                <option value="in a steaming hot shower">Shower</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div>
+            <label>Camera Angle</label>
+            <select id="aBox">
+                <option value="POV perspective">POV</option>
+                <option value="wide full body standing shot, visible feet">Full Body</option>
+                <option value="handheld phone selfie">Selfie</option>
+                <option value="aerial top down view">Top Down</option>
+                <option value="view from behind">From Behind</option>
+                <option value="low angle looking up">Low Angle</option>
+                <option value="medium waist-up shot">Medium Shot</option>
+            </select>
+        </div>
+        <div>
+            <label>Quantity</label>
+            <select id="qBox"><option value="1">1 Image</option><option value="2">2 Images</option><option value="4">4 Images</option></select>
+        </div>
+    </div>
+
+    <div class="prog-wrap" id="progWrap">
+        <div class="prog-fill" id="progFill"></div>
+        <div class="prog-text" id="progText">0% COMPLETE</div>
+    </div>
+
+    <button id="gBtn" onclick="runBatch()" class="btn">GENERATE UNFILTERED</button>
+
+    <div id="gallery" style="margin-top:20px; display:grid; gap:15px;"></div>
+
+    <div id="footerAds" style="text-align:center; margin-top:30px;">
+        <a href="https://t.ajrkm.link/368319/3785/0" target="_blank"><img src="https://www.imglnkx.com/3785/010770D_GDAT_18_ALL_EN_71_L.gif" style="width:95%; border-radius:12px; margin-bottom:10px;"></a>
+        <a href="https://t.ajrkm.link/368319/3785/0" target="_blank"><img src="https://www.imglnkx.com/3785/005838A_GDAT_18_ALL_EN_71_L.gif" style="width:95%; border-radius:12px;"></a>
+    </div>
+</div>
+
+<script>
+let coins = 5; let totalGens = 0;
+
+function firePop(idx) {
+    const urls = [
+        'https://t.bbwafx.com/ev4vyv30g0?url_id=37989&aff_id=368319&offer_id=10022&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0016',
+        'https://t.bbwafx.com/icrfvnptmo?url_id=0&aff_id=368319&offer_id=10163&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0016',
+        'https://t.bbwafx.com/qvoy1oi9ds?url_id=38987&aff_id=368319&offer_id=10219&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0016'
+    ];
+    crakPopIn.init({ url: urls[idx-1], contentType: 'iframe', width: '85%', height: '85%', animation: 'slide', direction: 'up', postitialBehavior: true, expireDays: 0 });
+}
+
+function enter() {
+    document.getElementById('gate').style.display='none';
+    document.getElementById('mainUI').style.display='block';
+    document.getElementById('chatHeadScript').src = "https://crxcr2.com/cams-widget-ext/im_jerky?lang=en&mode=prerecorded&outlinkUrl=https://t.acrsmartcam.com/368319/10301/39620";
+    setTimeout(() => firePop(1), 1500); 
+}
+
+function buy() { window.open("https://t.crdtg3.com/368319/7028?bo=2753,2754,2755,2756&aff_sub5=SF_006OG000004lmDN", '_blank'); coins+=5; document.getElementById('cDisplay').innerText=coins; }
+
+// NEW DYNAMIC SURPRISE ME
+function surpriseMe() {
+    const subjects = ["curvy blonde", "pale goth girl", "athletic ebony", "petite japanese girl", "mature redheaded woman", "tan brazilian model"];
+    const traits = ["messy hair", "tattoos", "piercings", "freckles", "glowing eyes", "long ponytail"];
+    const clothes = ["wearing lace", "completely naked", "unfiltered nudity", "translucent silk"];
+    
+    const s = subjects[Math.floor(Math.random()*subjects.length)];
+    const t = traits[Math.floor(Math.random()*traits.length)];
+    const c = clothes[Math.floor(Math.random()*clothes.length)];
+    
+    document.getElementById('pBox').value = `${s} with ${t}, ${c}`;
+}
+
+async function runBatch() {
+    const qty = parseInt(document.getElementById('qBox').value);
+    if(coins < qty) return alert("REFILL COINS TO CONTINUE!");
+    
+    document.getElementById('gBtn').disabled = true;
+    document.getElementById('progWrap').style.display = 'block';
+
+    for(let i=0; i<qty; i++) {
+        totalGens++;
+        await generateSingle();
+        let pct = Math.round(((i+1)/qty) * 100);
+        document.getElementById('progFill').style.width = pct + '%';
+        document.getElementById('progText').innerText = pct + '% COMPLETE';
+
+        if(totalGens % 3 === 0) {
+            let choice = (totalGens/3) % 3;
+            firePop(choice === 0 ? 3 : choice);
+        }
+    }
+    
+    coins -= qty; document.getElementById('cDisplay').innerText = coins;
+    document.getElementById('gBtn').disabled = false;
+    setTimeout(() => { document.getElementById('progWrap').style.display = 'none'; document.getElementById('progFill').style.width='0%'; }, 2000);
+}
+
+function generateSingle() {
+    return new Promise((resolve) => {
+        const p = document.getElementById('pBox').value;
+        const s = document.getElementById('sBox').value;
+        const l = document.getElementById('lBox').value;
+        const a = document.getElementById('aBox').value;
+        const seed = Math.floor(Math.random()*99999999);
+        
+        // MULTI-SUBDOMAIN CACHE BUSTER
+        const nodes = ["a", "b", "c"];
+        const node = nodes[Math.floor(Math.random()*nodes.length)];
+        
+        const finalP = `(masterpiece:1.4), ${s}, girl, ${p}, ${l}, ${a}, 8k, photorealistic, highres`;
+        const finalN = `clothed, clothes, blurry, bad anatomy, (extreme close up:1.4), deformed, text, watermark`;
+        
+        const url = `https://${node}.pollinations.ai/prompt/${encodeURIComponent(finalP)}?seed=${seed}&width=768&height=1280&model=turbo&nologo=true&no=${encodeURIComponent(finalN)}&cb=${Date.now()}`;
+        
+        const img = new Image();
+        img.src = url;
+        img.onload = () => {
+            const div = document.createElement('div');
+            div.style.cssText = "background:#111827; border-radius:15px; overflow:hidden; border:1px solid #1f2937;";
+            div.innerHTML = `<img src="${url}" style="width:100%"><button onclick="window.open('${url}')" class="btn" style="margin:0; border-radius:0;">DOWNLOAD HD</button>`;
+            document.getElementById('gallery').prepend(div);
+            resolve();
+        };
+        setTimeout(resolve, 8000);
+    });
+}
+</script>
+</body>
+</html>
