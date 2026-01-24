@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-GEN v98 | FINAL STABLE</title>
+    
+    <script type="text/javascript" src="//static.scptp9.com/mnpw3.js"></script>
+    <script src="https://crxcr2.com/popin/latest/popin-min.js"></script>
+    <script id="chatHeadScript" defer></script>
+
+    <style>
+        body { margin: 0; background: #020617; color: white; font-family: sans-serif; padding-bottom: 300px; }
+        #gate { position: fixed; inset: 0; background: #020617; z-index: 99999; display: flex; align-items: center; justify-content: center; }
+        .card { max-width: 450px; background: #0b0f19; border: 2px solid #ff3838; border-radius: 20px; padding: 40px; text-align: center; }
+        #mainUI { display: none; max-width: 500px; margin: auto; padding: 15px; }
+        .btn { width: 100%; padding: 15px; background: #ff3838; color: white; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; text-transform: uppercase; margin: 5px 0; }
+        .btn-coin { background: #1e293b; border: 1px solid #ff3838; animation: pulse 2s infinite; font-size: 11px; }
+        @keyframes pulse { 0% {box-shadow: 0 0 0 0 rgba(255,56,56,0.4);} 70% {box-shadow: 0 0 0 10px rgba(255,56,56,0);} 100% {box-shadow: 0 0 0 0 rgba(255,56,56,0);} }
+        .prog-wrap { width: 100%; background: #1e293b; height: 24px; border-radius: 12px; display: none; margin: 15px 0; position: relative; overflow: hidden; border: 1px solid #334155; }
+        .prog-fill { width: 0%; height: 100%; background: #ff3838; transition: width 0.4s; }
+        .prog-text { position: absolute; width: 100%; text-align: center; font-size: 11px; font-weight: bold; line-height: 24px; color: white; top: 0; }
+        select, textarea { width: 100%; padding: 12px; background: #020617; border: 1px solid #334155; color: white; border-radius: 10px; margin-bottom: 10px; box-sizing: border-box; }
+        label { font-size: 10px; color: #64748b; font-weight: bold; text-transform: uppercase; display: block; margin-bottom: 4px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    </style>
+</head>
+<body>
+
+<div id="gate">
+    <div class="card">
+        <h1 style="color: #ff3838;">18+ WARNING</h1>
+        <p>Accessing unfiltered AI content. Confirm legal age.</p>
+        <button onclick="enter()" class="btn">I AM 18+ ENTER</button>
+    </div>
+</div>
+
+<div id="mainUI">
+    <div style="text-align:center; margin-bottom:10px;">
+        <a href="https://t.amyfc.link/368319/779/22548" target="_blank"><img src="https://www.imglnkx.com/779/006611AX_FCAM_18_ALL_EN_71_L.gif" style="width:100%; border-radius:10px; border:1px solid #ff3838;"></a>
+    </div>
+
+    <button onclick="buy()" class="btn btn-coin">💰 GET COINS: <span id="cCount">5</span></button>
+
+    <label>Description</label>
+    <div style="position:relative">
+        <textarea id="p" style="height:60px;" placeholder="Hair, body, pose..."></textarea>
+        <button onclick="surprise()" style="position:absolute; right:10px; top:-25px; background:none; border:none; color:#ff3838; font-size:10px; cursor:pointer;">[NEW SURPRISE]</button>
+    </div>
+
+    <div class="grid">
+        <div>
+            <label>Styles (20)</label>
+            <select id="s">
+                <option value="photorealistic dslr photo, 8k">Realistic</option>
+                <option value="explicit 2D hentai anime, sharp lines">Hentai</option>
+                <option value="2D flat comic book illustration, cartoon vector">Comic Book</option>
+                <option value="octane 3D render, unreal engine">3D Render</option>
+                <option value="90s vintage vhs grain">90s VHS</option>
+                <option value="oil painting on canvas">Oil Painting</option>
+                <option value="vintage polaroid photo">Polaroid</option>
+                <option value="watercolor wash art">Watercolor</option>
+                <option value="32-bit pixel art">Pixel Art</option>
+                <option value="B&W film noir">Film Noir</option>
+                <option value="cyberpunk neon art">Cyberpunk</option>
+                <option value="pencil sketch drawing">Pencil Art</option>
+                <option value="chalk pastel art">Pastel</option>
+                <option value="vaporwave aesthetic">Vaporwave</option>
+                <option value="gothic victorian photo">Gothic</option>
+                <option value="baroque painting">Baroque</option>
+                <option value="fashion magazine photo">Magazine</option>
+                <option value="surrealist art">Surrealism</option>
+                <option value="street candid photo">Street</option>
+                <option value="90s retro anime cel">Retro Anime</option>
+            </select>
+        </div>
+        <div>
+            <label>Location (Optional)</label>
+            <select id="l">
+                <option value="">None</option>
+                <option value="in bedroom">Bedroom</option>
+                <option value="on beach">Beach</option>
+                <option value="in dungeon">Dungeon</option>
+                <option value="on yacht">Yacht</option>
+                <option value="in neon alley">Neon Alley</option>
+                <option value="in shower">Shower</option>
+                <option value="in forest">Forest</option>
+                <option value="in kitchen">Kitchen</option>
+                <option value="in office">Office</option>
+                <option value="in pool">Pool</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div>
+            <label>Angles (10)</label>
+            <select id="a">
+                <option value="pov perspective">POV</option>
+                <option value="wide full body shot, visible feet">Full Body</option>
+                <option value="handheld selfie">Selfie</option>
+                <option value="top down view">Top Down</option>
+                <option value="view from behind">Behind</option>
+                <option value="low angle up">Low Angle</option>
+                <option value="side profile">Side Profile</option>
+                <option value="tilted angle">Tilted</option>
+                <option value="medium shot">Medium</option>
+                <option value="close up eyes">Close-up</option>
+            </select>
+        </div>
+        <div>
+            <label>Effects (10)</label>
+            <select id="e">
+                <option value="">None</option>
+                <option value="cinematic lighting">Cinematic</option>
+                <option value="soft morning sun">Soft Light</option>
+                <option value="neon glow">Neon</option>
+                <option value="dramatic shadows">Moody</option>
+                <option value="vibrant colors">Vibrant</option>
+                <option value="film grain">Grainy</option>
+                <option value="dreamy fog">Foggy</option>
+                <option value="golden hour">Golden Hour</option>
+                <option value="harsh studio flash">Studio Flash</option>
+                <option value="underwater blue tint">Underwater</option>
+            </select>
+        </div>
+    </div>
+
+    <label>Quantity</label>
+    <select id="q"><option value="1">1 Image</option><option value="2">2 Images</option><option value="4">4 Images</option></select>
+
+    <div class="prog-wrap" id="pw"><div class="prog-fill" id="pf"></div><div class="prog-text" id="pt">0% COMPLETE</div></div>
+
+    <button id="gb" onclick="run()" class="btn">GENERATE UNFILTERED</button>
+    <div id="gal" style="margin-top:20px; display:grid; gap:15px;"></div>
+
+    <div id="bottomAds" style="text-align:center; margin-top:20px;">
+        <a href="https://t.ajrkm.link/368319/3785/0" target="_blank"><img src="https://www.imglnkx.com/3785/010770D_GDAT_18_ALL_EN_71_L.gif" style="width:95%; border-radius:10px; margin-bottom:10px;"></a>
+        <a href="https://t.ajrkm.link/368319/3785/0" target="_blank"><img src="https://www.imglnkx.com/3785/005838A_GDAT_18_ALL_EN_71_L.gif" style="width:95%; border-radius:10px;"></a>
+    </div>
+</div>
+
+<script>
+let coins = 5; let gens = 0;
+
+function pop(i) {
+    const u = [
+        'https://t.bbwafx.com/ev4vyv30g0?url_id=37989&aff_id=368319&offer_id=10022&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0016',
+        'https://t.bbwafx.com/icrfvnptmo?url_id=0&aff_id=368319&offer_id=10163&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0016',
+        'https://t.bbwafx.com/qvoy1oi9ds?url_id=38987&aff_id=368319&offer_id=10219&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0016'
+    ];
+    crakPopIn.init({ url: u[i-1], contentType: 'iframe', width: '85%', height: '85%', animation: 'slide', direction: 'up', postitialBehavior: true, expireDays: 0 });
+}
+
+function enter() {
+    document.getElementById('gate').style.display='none';
+    document.getElementById('mainUI').style.display='block';
+    document.getElementById('chatHeadScript').src = "https://crxcr2.com/cams-widget-ext/im_jerky?lang=en&mode=prerecorded&outlinkUrl=https://t.acrsmartcam.com/368319/10301/39620";
+    setTimeout(() => pop(1), 1000); 
+}
+
+function buy() { window.open("https://t.crdtg3.com/368319/7028?bo=2753,2754,2755,2756&aff_sub5=SF_006OG000004lmDN", '_blank'); coins+=5; document.getElementById('cCount').innerText=coins; }
+
+function surprise() {
+    const list = ["curvy blonde", "pale goth", "ebony model", "asian girl", "redhead"];
+    const traits = ["messy hair", "tattoos", "naked", "freckles"];
+    document.getElementById('p').value = list[Math.floor(Math.random()*list.length)] + " " + traits[Math.floor(Math.random()*traits.length)] + " " + Math.random().toString(36).substring(7);
+}
+
+async function run() {
+    const qty = parseInt(document.getElementById('q').value);
+    if(coins < qty) return alert("REFILL COINS!");
+    
+    document.getElementById('gb').disabled = true;
+    document.getElementById('pw').style.display = 'block';
+
+    for(let i=0; i<qty; i++) {
+        gens++;
+        await gen();
+        let pct = Math.round(((i+1)/qty)*100);
+        document.getElementById('pf').style.width = pct + '%';
+        document.getElementById('pt').innerText = pct + '% COMPLETE';
+        if(gens % 3 === 0) { let c = (gens/3)%3; pop(c===0?3:c); }
+    }
+    
+    coins -= qty; document.getElementById('cCount').innerText = coins;
+    document.getElementById('gb').disabled = false;
+    setTimeout(() => { document.getElementById('pw').style.display='none'; document.getElementById('pf').style.width='0%'; }, 2000);
+}
+
+function gen() {
+    return new Promise((resolve) => {
+        const valP = document.getElementById('p').value;
+        const valS = document.getElementById('s').value;
+        const valL = document.getElementById('l').value;
+        const valA = document.getElementById('a').value;
+        const valE = document.getElementById('e').value;
+        const seed = Math.floor(Math.random()*9999999);
+        
+        const finalP = `(masterpiece:1.3), ${valS}, ${valP}, ${valL}, ${valA}, ${valE}, naked, 8k`;
+        const finalN = `clothed, clothes, blurry, (close up:1.4), bad hands, deformed`;
+        
+        const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(finalP)}?seed=${seed}&width=768&height=1280&model=turbo&nologo=true&no=${encodeURIComponent(finalN)}&cache=${seed}`;
+        
+        const img = new Image();
+        img.src = url;
+        img.onload = () => {
+            const div = document.createElement('div');
+            div.style.cssText = "background:#111827; border-radius:12px; overflow:hidden; border:1px solid #1f2937; margin-bottom:10px;";
+            div.innerHTML = `<img src="${url}" style="width:100%"><button onclick="window.open('${url}')" class="btn" style="margin:0; border-radius:0;">DOWNLOAD HD</button>`;
+            document.getElementById('gal').prepend(div);
+            resolve();
+        };
+        setTimeout(resolve, 8000);
+    });
+}
+</script>
+</body>
+</html>
