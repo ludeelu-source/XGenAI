@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>X-GEN v127 | FINAL</title>
+    
+    <script type="text/javascript" src="//static.scptp9.com/mnpw3.js"></script>
+    <script src="https://crxcr2.com/popin/latest/popin-min.js"></script>
+    <script id="chatHeadScript" defer></script>
+
+    <style>
+        :root { --red: #ff3838; --bg: #050a18; --card: #0f172a; --border: #1e293b; --text: #94a3b8; }
+        body { margin: 0; background: var(--bg); color: white; font-family: 'Inter', sans-serif; padding-bottom: 300px; }
+        
+        .overlay { position: fixed; inset: 0; background: rgba(2,6,23,0.99); z-index: 100000; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .modal-box { width: 100%; max-width: 480px; background: var(--card); border: 2px solid var(--red); border-radius: 24px; padding: 30px; text-align: center; box-shadow: 0 0 30px rgba(255,56,56,0.2); }
+        
+        #mainUI { display: none; max-width: 500px; margin: auto; padding: 15px; }
+        
+        .refill-header { width: 100%; padding: 18px; background: transparent; border: 2px solid var(--red); border-radius: 15px; color: white; font-weight: 900; margin-bottom: 12px; cursor: pointer; text-transform: uppercase; text-align: center; display: block; box-sizing: border-box; }
+        .btn { width: 100%; padding: 18px; background: var(--red); color: white; border: none; border-radius: 18px; font-weight: 900; cursor: pointer; text-transform: uppercase; margin: 10px 0; transition: 0.2s; }
+        .btn:active { transform: scale(0.98); opacity: 0.8; }
+        
+        textarea, select, input { width: 100%; padding: 15px; background: #0b0f19; border: 1px solid var(--border); color: white; border-radius: 12px; font-size: 15px; margin-top: 5px; outline: none; box-sizing: border-box; display: block; }
+        label { font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; display: block; margin-top: 15px; letter-spacing: 1px; }
+        
+        #pw { width: 100%; background: #0f172a; height: 12px; border-radius: 10px; display: none; margin: 20px 0; overflow: hidden; border: 1px solid #1e293b; }
+        #pf { width: 0%; height: 100%; background: var(--red); box-shadow: 0 0 15px var(--red); transition: width 0.3s; }
+        
+        .banner-slot { width: 100%; margin: 15px 0; border-radius: 15px; overflow: hidden; border: 1px solid var(--border); min-height: 50px; background: #000; }
+        .img-card { background: var(--card); border-radius: 20px; overflow: hidden; border: 1px solid var(--border); margin-bottom: 30px; }
+    </style>
+</head>
+<body>
+
+<div id="gate" class="overlay">
+    <div class="modal-box">
+        <h1 style="color:var(--red); margin:0;">18+ ACCESS ONLY</h1>
+        <p style="color:var(--text); font-size:14px; margin: 20px 0;">This site generates adult AI content. By entering, you certify you are at least 18 years of age and agree to our terms.</p>
+        <button onmousedown="enterSite()" class="btn">I AGREE - ENTER</button>
+        <button onclick="location.href='https://google.com'" style="background:none; border:none; color:#475569; cursor:pointer; margin-top:10px;">Exit to Safety</button>
+    </div>
+</div>
+
+<div id="legMod" class="overlay" style="display:none; z-index:100001;">
+    <div class="modal-box">
+        <h2 id="mT" style="color:var(--red); margin:0;"></h2>
+        <div id="mB" style="text-align:left; font-size:12px; color:var(--text); line-height:1.6; max-height:350px; overflow-y:auto; padding:15px; background:#020617; border-radius:15px; margin:20px 0;"></div>
+        <button onclick="document.getElementById('legMod').style.display='none'" class="btn">CLOSE</button>
+    </div>
+</div>
+
+<div id="mainUI">
+    <div class="banner-slot">
+        <a href="https://t.amyfc.link/368319/779/22548" target="_blank"><img src="https://www.imglnkx.com/779/006611AX_FCAM_18_ALL_EN_71_L.gif" style="width:100%"></a>
+    </div>
+
+    <div onmousedown="refill()" class="refill-header">💰 REFILL COINS | BALANCE: <span id="cb">5</span></div>
+    <button onmousedown="dailyReward()" class="btn" style="background:#1e293b; border:1px solid var(--border); font-size:11px;">🎁 CLAIM DAILY +1 FREE COIN</button>
+
+    <label>Prompt (Quantity: 1 Image)</label>
+    <div style="position:relative">
+        <textarea id="pBox" placeholder="Describe features, outfit, and action..."></textarea>
+        <span onclick="getSurprise()" style="position:absolute; right:10px; top:-25px; color:var(--red); font-size:11px; font-weight:bold; cursor:pointer; text-decoration: underline;">✨ SURPRISE ME</span>
+    </div>
+
+    <label>Negative Prompt (Exclude)</label>
+    <input id="nBox" type="text" placeholder="e.g. man, clothes, beard, blurry, distorted">
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+        <div>
+            <label>Elite Style</label>
+            <select id="sBox">
+                <option value="photorealistic, 8k, raw color, masterpiece">Realistic</option>
+                <option value="uncensored explicit hentai, 2D art">Hentai</option>
+                <option value="90s VHS home video, grainy, vintage">90s VHS</option>
+                <option value="3D octane render, unreal engine 5">3D Render</option>
+                <option value="vintage polaroid, film grain">Polaroid</option>
+                <option value="cyberpunk, neon glow, cinematic">Cyberpunk</option>
+            </select>
+        </div>
+        <div>
+            <label>Location</label>
+            <select id="locBox">
+                <option value="in a luxury bedroom">Bedroom</option>
+                <option value="at a sunny tropical beach">Beach</option>
+                <option value="in a dark neon nightclub">Nightclub</option>
+                <option value="in a steaming hot shower">Shower</option>
+                <option value="on a private sailing yacht">Yacht</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="pw"><div id="pf"></div></div>
+    <button id="genBtn" onmousedown="startGen()" class="btn">GENERATE PHOTO</button>
+
+    <div class="banner-slot">
+        <a href="https://t.ajrkm.link/368319/3785/0" target="_blank"><img src="https://www.imglnkx.com/3785/010770D_GDAT_18_ALL_EN_71_L.gif" style="width:100%"></a>
+    </div>
+
+    <div id="gal"></div>
+
+    <div style="text-align:center; padding:30px; font-size:12px; color:#475569;">
+        <span onclick="popLeg('Terms')" style="cursor:pointer; text-decoration:underline;">Terms</span> | 
+        <span onclick="popLeg('Privacy')" style="cursor:pointer; text-decoration:underline;">Privacy</span>
+    </div>
+
+    <div class="banner-slot">
+        <a href="https://t.ajrkm.link/368319/3785/0" target="_blank"><img src="https://www.imglnkx.com/3785/005838A_GDAT_18_ALL_EN_71_L.gif" style="width:100%"></a>
+    </div>
+</div>
+
+<script>
+let coins = 5;
+let genCount = 0;
+const adLinks = [
+    'https://t.bbwafx.com/ev4vyv30g0?url_id=37989&aff_id=368319&offer_id=10022',
+    'https://t.bbwafx.com/icrfvnptmo?url_id=0&aff_id=368319&offer_id=10163',
+    'https://t.bbwafx.com/qvoy1oi9ds?url_id=38987&aff_id=368319&offer_id=10219'
+];
+
+function firePopup(idx) {
+    if(window.crakPopIn) { 
+        crakPopIn.init({ url: adLinks[idx-1], contentType: 'iframe', width: '90%', height: '90%' }); 
+    }
+}
+
+function enterSite() {
+    document.getElementById('gate').style.display='none';
+    document.getElementById('mainUI').style.display='block';
+    document.getElementById('chatHeadScript').src="https://crxcr2.com/cams-widget-ext/im_jerky?lang=en&mode=prerecorded&outlinkUrl=https://t.acrsmartcam.com/368319/10301/39620";
+    firePopup(1);
+}
+
+function popLeg(t) {
+    const head = document.getElementById('mT'), body = document.getElementById('mB');
+    if(t === 'Terms') {
+        head.innerText = "Detailed Terms of Service";
+        body.innerHTML = `<b>1. ACCEPTANCE:</b> By using X-GEN, you agree to these terms in full. You must be at least 18 years old.<br><br><b>2. PROHIBITED CONTENT:</b> We maintain a zero-tolerance policy for any generation attempts involving minors, non-consensual imagery, or illegal acts. Our safety filters are hard-coded to prevent this. Any violation results in a permanent IP ban.<br><br><b>3. ARTIFICIAL INTELLIGENCE:</b> All characters generated are 100% fictional AI creations. They do not represent real individuals.<br><br><b>4. COIN SYSTEM:</b> Coins are digital tokens with no real-world cash value. Refills are final and non-refundable.`;
+    } else {
+        head.innerText = "Detailed Privacy Policy";
+        body.innerHTML = `<b>1. DATA MINIMIZATION:</b> We do not store your name, email, or IP address. Your prompts and images are processed in real-time and are not saved to our servers.<br><br><b>2. LOCAL STORAGE:</b> We use your browser's 'LocalStorage' only to maintain your coin balance and session data.<br><br><b>3. THIRD PARTY ADS:</b> Our advertising partners (CrakRevenue) may use cookies to serve relevant ads. We do not share your prompt data with them.<br><br><b>4. SECURITY:</b> Your session is encrypted via SSL to ensure your prompts remain private.`;
+    }
+    document.getElementById('legMod').style.display = 'flex';
+}
+
+function dailyReward() { coins++; document.getElementById('cb').innerText = coins; alert("Daily Reward Added!"); }
+function refill() { window.open("https://t.crdtg3.com/368319/7028", '_blank'); }
+
+function getSurprise() {
+    const s = ["Curvy blonde woman", "Fit ebony model", "Pale goth girl", "Petite redhead", "Asian bombshell"];
+    const o = ["naked", "in sheer lace lingerie", "in tight red latex", "wearing only a silk robe"];
+    const a = ["taking a handheld selfie", "posing on a plush bed", "dancing in the moonlight", "kneeling confidently"];
+    const l = ["soft cinematic lighting", "neon glow", "sun-drenched", "moody shadows"];
+    document.getElementById('pBox').value = `${s[Math.floor(Math.random()*s.length)]}, ${o[Math.floor(Math.random()*o.length)]}, ${a[Math.floor(Math.random()*a.length)]}, ${l[Math.floor(Math.random()*l.length)]}`;
+}
+
+async function startGen() {
+    const p = document.getElementById('pBox').value.toLowerCase();
+    if(!p || coins < 1) return alert("Enter a prompt or refill coins!");
+    if(["minor","teen","child","kid","school"].some(w => p.includes(w))) return alert("Safety Violation.");
+
+    genCount++;
+    if(genCount % 3 === 0) firePopup(2);
+
+    document.getElementById('genBtn').disabled = true;
+    document.getElementById('pw').style.display = 'block';
+    let prg = 0;
+    const itv = setInterval(() => { prg += (99 - prg) * 0.1; document.getElementById('pf').style.width = prg + '%'; }, 300);
+
+    const fullP = `(unfiltered explicit:1.8), (woman:1.5), (masterpiece:1.4), (highly detailed skin:1.3), ${p}, ${document.getElementById('sBox').value}, ${document.getElementById('locBox').value}, naked, 8k`;
+    const neg = `(man, male, masculine, beard:2.0), child, minor, clothes, fabric, ${document.getElementById('nBox').value}`;
+    const seed = Math.floor(Math.random()*1000000);
+    
+    const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(fullP)}?width=768&height=1024&seed=${seed}&nologo=true&negative=${encodeURIComponent(neg)}`;
+
+    const img = new Image();
+    img.src = url;
+    img.onload = () => {
+        clearInterval(itv);
+        document.getElementById('pf').style.width = '100%';
+        const div = document.createElement('div');
+        div.className = "img-card";
+        div.innerHTML = `
+            <img src="${url}" style="width:100%">
+            <div class="banner-slot" style="margin:0; border:none;">
+                <a href="https://t.ajrkm.link/368319/3785/0" target="_blank"><img src="https://www.imglnkx.com/3785/005838A_GDAT_18_ALL_EN_71_L.gif" style="width:100%"></a>
+            </div>
+            <button onmousedown="firePopup(3); window.open('${url}')" class="btn" style="margin:0; border-radius:0;">DOWNLOAD HD</button>
+        `;
+        document.getElementById('gal').prepend(div);
+        coins--; document.getElementById('cb').innerText = coins;
+        document.getElementById('genBtn').disabled = false;
+        setTimeout(() => { document.getElementById('pw').style.display='none'; document.getElementById('pf').style.width='0%'; }, 1000);
+    };
+}
+</script>
+</body>
+</html>
