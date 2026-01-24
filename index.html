@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>X-GEN v143</title>
+    <script type="text/javascript" src="//static.scptp9.com/mnpw3.js"></script>
+    <script id="chatHeadScript" defer></script>
+    <style>
+        :root { --red: #ff3838; --bg: #050a18; --card: #0f172a; --border: #1e293b; --text: #94a3b8; }
+        body { margin: 0; background: var(--bg); color: white; font-family: 'Inter', sans-serif; padding-bottom: 100px; }
+        
+        /* OVERLAYS & MODALS */
+        .overlay { position: fixed; inset: 0; background: rgba(2,6,23,0.95); z-index: 100000; display: flex; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(5px); }
+        .modal-box { width: 100%; max-width: 480px; background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 25px; text-align: center; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
+        .legal-text { text-align: left; font-size: 12px; color: var(--text); max-height: 300px; overflow-y: auto; background: #020617; padding: 15px; border-radius: 10px; margin: 15px 0; line-height: 1.5; }
+
+        /* UI ELEMENTS */
+        #mainUI { display: none; max-width: 500px; margin: auto; padding: 15px; }
+        .btn { width: 100%; padding: 16px; background: var(--red); color: white; border: none; border-radius: 12px; font-weight: 800; cursor: pointer; text-transform: uppercase; margin: 8px 0; font-size: 14px; letter-spacing: 0.5px; }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        
+        /* INPUTS */
+        textarea, select, input { width: 100%; padding: 14px; background: #0b0f19; border: 1px solid var(--border); color: white; border-radius: 10px; margin-top: 6px; box-sizing: border-box; font-family: inherit; font-size: 14px; }
+        textarea:focus, input:focus, select:focus { border-color: var(--red); outline: none; }
+        label { font-size: 11px; color: #64748b; font-weight: 700; display: block; margin-top: 15px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        
+        /* LOADING BAR */
+        #pw { width: 100%; background: #0f172a; height: 6px; border-radius: 3px; display: none; margin: 15px 0; overflow: hidden; }
+        #pf { width: 0%; height: 100%; background: var(--red); transition: width 0.3s; }
+        
+        /* IMAGES & BANNERS */
+        .banner-slot { width: 100%; margin: 20px 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); background: #000; display: block; }
+        .banner-slot img { display: block; width: 100%; }
+        
+        .img-card { background: var(--card); border-radius: 16px; overflow: hidden; margin-bottom: 25px; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+        .img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+        .img-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; cursor: pointer; transition: opacity 0.2s; }
+        .img-grid img:hover { opacity: 0.8; }
+    </style>
+</head>
+<body>
+
+<div id="gate" class="overlay">
+    <div class="modal-box" style="border: 2px solid var(--red);">
+        <h1 style="color:var(--red); margin:0 0 10px 0;">18+ RESTRICTED</h1>
+        <p style="color:var(--text); font-size:14px; margin-bottom: 25px;">This portal uses uncontrolled AI generation. By entering, you confirm you are 18 years of age or older.</p>
+        <button onclick="enterSite()" class="btn">I AM 18+ ENTER</button>
+        <button onclick="window.location.href='https://google.com'" style="background:none; border:none; color:gray; cursor:pointer; text-decoration:underline; margin-top:15px; font-size:12px;">EXIT SITE</button>
+    </div>
+</div>
+
+<div id="legMod" class="overlay" style="display:none; z-index:100001;">
+    <div class="modal-box">
+        <h3 id="mT" style="color:white; margin:0;"></h3>
+        <div id="mB" class="legal-text"></div>
+        <button onclick="document.getElementById('legMod').style.display='none'" class="btn" style="background:#1e293b;">CLOSE</button>
+    </div>
+</div>
+
+<div id="mainUI">
+    <div class="banner-slot"><a href="https://t.amyfc.link/368319/779/22548" target="_blank"><img src="https://www.imglnkx.com/779/006611AX_FCAM_18_ALL_EN_71_L.gif"></a></div>
+    
+    <button onclick="refillShuffle()" class="btn" style="background:transparent; border:2px solid var(--red); color:var(--red);">
+        💰 BALANCE: <span id="cb">5</span> | REFILL (+5)
+    </button>
+
+    <label>Prompt <span onclick="surprise()" style="color:var(--red); float:right; cursor:pointer;">[SURPRISE ME]</span></label>
+    <textarea id="pBox" placeholder="Ex: Blonde woman, red dress, bedroom..."></textarea>
+    
+    <label>Negative (Safety Filter)</label>
+    <input id="nBox" type="text" placeholder="child, minor, bad quality, blurry" value="child, minor, bad quality, blurry">
+
+    <div class="grid">
+        <div><label>20 Styles</label>
+            <select id="sBox">
+                <option value="raw photo, 8k uhd, dslr">Realistic</option><option value="explicit hentai style">Hentai</option>
+                <option value="90s vhs tape aesthetic">90s VHS</option><option value="octane render, 3d, unreal engine">3D Render</option>
+                <option value="vintage polaroid photo">Polaroid</option><option value="cyberpunk neon, futuristic">Cyberpunk</option>
+                <option value="dark gothic aesthetic">Gothic</option><option value="fashion magazine photography">Magazine</option>
+                <option value="retro 80s anime style">80s Anime</option><option value="charcoal pencil sketch">Sketch</option>
+                <option value="film noir, black and white">Film Noir</option><option value="pastel colors, soft">Pastel</option>
+                <option value="classic oil painting">Oil Paint</option><option value="pixel art, 16-bit">Pixel Art</option>
+                <option value="candid street photography">Candid</option><option value="studio glamour shot">Glamour</option>
+                <option value="fitness model photography">Fitness</option><option value="watercolor painting">Watercolor</option>
+                <option value="synthwave aesthetic">Synthwave</option><option value="comic book style">Comic</option>
+            </select>
+        </div>
+        <div><label>10 Angles</label>
+            <select id="aBox">
+                <option value="pov">POV</option><option value="full body shot">Full Body</option>
+                <option value="selfie angle">Selfie</option><option value="view from behind">Behind</option>
+                <option value="low angle shot">Low Angle</option><option value="high angle shot">High Angle</option>
+                <option value="close up portrait">Portrait</option><option value="side profile view">Side View</option>
+                <option value="aerial drone view">Aerial</option><option value="extreme macro detail">Macro</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div><label>10 Effects</label>
+            <select id="eBox">
+                <option value="">None</option><option value="neon lighting">Neon</option>
+                <option value="golden hour sunlight">Sunlight</option><option value="wet skin, rain drops">Wet/Rain</option>
+                <option value="dramatic cinematic lighting">Moody</option><option value="foggy mist atmosphere">Foggy</option>
+                <option value="motion blur action">Motion</option><option value="lens flare">Flare</option>
+                <option value="film grain noise">Grainy</option><option value="underwater refraction">Underwater</option>
+            </select>
+        </div>
+        <div><label>Qty / Size</label>
+            <div class="grid" style="grid-template-columns: 0.5fr 1fr; gap:5px; margin:0;">
+                <select id="qBox"><option value="1">1</option><option value="2">2</option><option value="4" selected>4</option></select>
+                <select id="szBox"><option value="768x1024">Portrait</option><option value="1024x768">Landscape</option><option value="1024x1024">Square</option></select>
+            </div>
+        </div>
+    </div>
+
+    <div id="pw"><div id="pf"></div></div>
+    <button id="genBtn" onclick="startGen()" class="btn">GENERATE</button>
+
+    <div class="banner-slot"><a href="https://t.ajrkm.link/368319/3785/0" target="_blank"><img src="https://www.imglnkx.com/3785/010770D_GDAT_18_ALL_EN_71_L.gif"></a></div>
+    
+    <div id="gal"></div>
+
+    <div class="banner-slot"><a href="https://t.acrsmartcam.com/368319/3611/8425?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN" target="_blank"><img src="https://www.imglnkx.com/3785/005838A_GDAT_18_ALL_EN_71_L.gif"></a></div>
+    
+    <center style="font-size:11px; color:#64748b; padding:30px 0;">
+        <span onclick="openLeg('Terms')" style="cursor:pointer; text-decoration:underline;">Terms of Service</span> &bull; 
+        <span onclick="openLeg('Privacy')" style="cursor:pointer; text-decoration:underline;">Privacy Policy</span>
+    </center>
+</div>
+
+<script>
+// --- INITIALIZATION ---
+let coins = parseInt(localStorage.getItem('coins')) || 5;
+document.getElementById('cb').innerText = coins;
+const refillLinks = [
+    "https://t.crdtg3.com/368319/7028",
+    "https://t.acrsmartcam.com/368319/3611/8425?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN"
+];
+
+// --- LOGIC ---
+function addCoins(n) { 
+    coins += n; 
+    localStorage.setItem('coins', coins); 
+    document.getElementById('cb').innerText = coins; 
+}
+
+function enterSite() {
+    document.getElementById('gate').style.display='none';
+    document.getElementById('mainUI').style.display='block';
+    // Chat script loads AFTER entry
+    document.getElementById('chatHeadScript').src="https://crxcr2.com/cams-widget-ext/im_jerky?lang=en&mode=prerecorded&outlinkUrl=https://t.acrsmartcam.com/368319/10301/39620";
+    
+    // Daily Reward
+    const today = new Date().toDateString();
+    if(localStorage.getItem('lastVisit') !== today) {
+        addCoins(1); 
+        localStorage.setItem('lastVisit', today);
+        alert("Daily Bonus: You received +1 Free Coin!");
+    }
+}
+
+function refillShuffle() {
+    // Randomly pick one of the two links
+    const link = refillLinks[Math.floor(Math.random() * refillLinks.length)];
+    window.open(link, '_blank');
+    addCoins(5);
+}
+
+function surprise() {
+    const prompts = [
+        "fit blonde instagram model, mirror selfie, messy bun, yoga pants, bedroom background",
+        "redhead woman, freckles, wet hair, swimming pool, blue bikini, high detail skin",
+        "goth girl, fishnet tights, heavy eyeliner, dark room, purple neon light",
+        "japanese gravure idol, school uniform, classroom setting, soft sunlight",
+        "curvy latina, tight red dress, evening makeup, luxury hotel lobby"
+    ];
+    document.getElementById('pBox').value = prompts[Math.floor(Math.random() * prompts.length)];
+}
+
+function openLeg(type) {
+    const t = document.getElementById('mT');
+    const b = document.getElementById('mB');
+    if(type === 'Terms') {
+        t.innerText = "Terms of Service";
+        b.innerHTML = "<b>1. Acceptance:</b> By using X-GEN, you agree to these terms.<br><br><b>2. Age Requirement:</b> You must be at least 18 years old. We have zero tolerance for minors.<br><br><b>3. AI Content:</b> All images are generated by Artificial Intelligence. Any resemblance to real persons is coincidental.<br><br><b>4. Prohibited Content:</b> Generating illegal content (CSAM, non-consensual deepfakes) is strictly prohibited and will be reported.";
+    } else {
+        t.innerText = "Privacy Policy";
+        b.innerHTML = "<b>1. Data Collection:</b> We do not store your personal data on our servers. Coin balance is stored locally on your device.<br><br><b>2. Image Privacy:</b> Images are generated via a public API and are not saved by us.<br><br><b>3. Third-Party Links:</b> This site contains links to third-party advertisers. We are not responsible for their content.";
+    }
+    document.getElementById('legMod').style.display = 'flex';
+}
+
+async function startGen() {
+    if(coins < 1) return alert("You are out of coins! Click REFILL to get more.");
+    
+    const btn = document.getElementById('genBtn');
+    btn.disabled = true;
+    btn.innerText = "GENERATING...";
+    document.getElementById('pw').style.display = 'block';
+    
+    // Fake progress bar
+    let pr = 0; 
+    const itv = setInterval(() => { 
+        if(pr < 90) pr += 5; 
+        document.getElementById('pf').style.width = pr+'%'; 
+    }, 200);
+
+    const qty = parseInt(document.getElementById('qBox').value);
+    const dims = document.getElementById('szBox').value.split('x');
+    
+    // Balanced Prompt for Quality + Uncensored (without triggering hard block)
+    const basePrompt = `(uncensored, nude, naked, natural skin:1.4), ${document.getElementById('pBox').value}, ${document.getElementById('sBox').value}, ${document.getElementById('aBox').value}, ${document.getElementById('eBox').value}, 8k uhd, dslr, soft lighting, high quality, fujifilm xt3`;
+    const negPrompt = `(child, underaged, minor:2.0), (deformed, bad anatomy, disfigured:1.5), ${document.getElementById('nBox').value}`;
+
+    // GENERATION LOOP WITH DELAY
+    const urls = [];
+    for(let i = 0; i < qty; i++) {
+        // Cache buster + Time stamp to prevent API Limits/Caching
+        const cacheBuster = Math.random().toString(36).substring(7);
+        const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(basePrompt)}?width=${dims[0]}&height=${dims[1]}&seed=${Math.floor(Math.random()*1e9)}&nologo=true&negative=${encodeURIComponent(negPrompt)}&cache=${cacheBuster}`;
+        
+        urls.push(url);
+        // Wait 800ms between requests to prevent "Too Many Requests" errors
+        await new Promise(r => setTimeout(r, 800));
+    }
+
+    clearInterval(itv);
+    document.getElementById('pf').style.width = '100%';
+    
+    // Create Result Card
+    const card = document.createElement('div'); 
+    card.className = 'img-card';
+    
+    // Build Grid HTML
+    let gridHtml = `<div class="img-grid" style="grid-template-columns: ${qty === 1 ? '1fr' : '1fr 1fr'}">`;
+    urls.forEach(u => {
+        gridHtml += `<img src="${u}" onclick="window.open('${u}','_blank')">`;
+    });
+    gridHtml += `</div><div style="padding:10px; font-size:10px; background:#020617; text-align:center; color:#64748b;">CLICK IMAGE TO DOWNLOAD HD</div>`;
+    
+    card.innerHTML = gridHtml;
+    document.getElementById('gal').prepend(card);
+
+    addCoins(-1); 
+    
+    // Reset UI
+    btn.disabled = false; 
+    btn.innerText = "GENERATE";
+    setTimeout(() => { document.getElementById('pw').style.display = 'none'; document.getElementById('pf').style.width = '0%'; }, 500);
+}
+</script>
+</body>
+</html>
