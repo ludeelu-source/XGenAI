@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>X-GEN v121 | PRODUCTION READY</title>
+    
+    <script type="text/javascript" src="//static.scptp9.com/mnpw3.js"></script>
+    <script src="https://crxcr2.com/popin/latest/popin-min.js"></script>
+    <script id="chatHeadScript" defer></script>
+
+    <style>
+        :root { --red: #ff3838; --bg: #050a18; --card: #0f172a; --border: #1e293b; --text: #94a3b8; }
+        body { margin: 0; background: var(--bg); color: white; font-family: 'Inter', sans-serif; padding-bottom: 400px; }
+        
+        .overlay { position: fixed; inset: 0; background: rgba(2,6,23,0.99); z-index: 100000; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .modal-box { width: 100%; max-width: 420px; background: var(--card); border: 2px solid var(--red); border-radius: 24px; padding: 30px; text-align: center; }
+        
+        #mainUI { display: none; max-width: 500px; margin: auto; padding: 15px; }
+        
+        /* HEADER UI */
+        .refill-header { width: 100%; padding: 18px; background: transparent; border: 2px solid var(--red); border-radius: 15px; color: white; font-weight: 900; font-size: 15px; margin-bottom: 15px; cursor: pointer; text-transform: uppercase; }
+        .btn { width: 100%; padding: 18px; background: var(--red); color: white; border: none; border-radius: 18px; font-weight: 900; cursor: pointer; text-transform: uppercase; margin: 10px 0; font-size: 15px; }
+        .btn-daily { background: #1e293b; border: 1px solid var(--border); font-size: 12px; }
+
+        textarea, select { width: 100%; padding: 18px; background: #0b0f19; border: 1px solid var(--border); color: white; border-radius: 15px; font-size: 16px; margin-top: 8px; outline: none; }
+        label { font-size: 11px; color: #64748b; font-weight: 800; text-transform: uppercase; display: block; margin-top: 15px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+        /* LOADING BAR */
+        #pw { width: 100%; background: #0f172a; height: 12px; border-radius: 10px; display: none; margin: 20px 0; overflow: hidden; border: 1px solid #1e293b; }
+        #pf { width: 0%; height: 100%; background: var(--red); box-shadow: 0 0 15px var(--red); transition: width 0.3s; }
+        
+        .banner-slot { width: 100%; margin: 15px 0; border-radius: 15px; overflow: hidden; border: 1px solid var(--border); }
+        .banner-slot img { width: 100%; display: block; }
+        .img-card { background: var(--card); border-radius: 20px; overflow: hidden; border: 1px solid var(--border); margin-bottom: 30px; }
+    </style>
+</head>
+<body>
+
+<div id="gate" class="overlay">
+    <div class="modal-box">
+        <h1 style="color:var(--red); margin:0;">18+ ACCESS</h1>
+        <p style="color:var(--text); margin: 20px 0;">Verify your age to access uncensored AI tools.</p>
+        <button onmousedown="enterSite()" class="btn">I AM 18+ ENTER</button>
+        <button onclick="location.href='https://google.com'" style="background:none; border:none; color:#475569; cursor:pointer; margin-top:10px;">Exit</button>
+    </div>
+</div>
+
+<div id="mainUI">
+    <div class="banner-slot" style="border-color: var(--red);">
+        <a href="https://t.amyfc.link/368319/779/22548" target="_blank"><img src="https://www.imglnkx.com/779/006611AX_FCAM_18_ALL_EN_71_L.gif"></a>
+    </div>
+
+    <button onmousedown="refill()" class="refill-header">💰 REFILL COINS | BALANCE: <span id="cb">5</span></button>
+    <button onmousedown="dailyReward()" class="btn btn-daily">🎁 CLAIM DAILY +1 COIN</button>
+
+    <label>Describe Your Vision</label>
+    <div style="position:relative">
+        <textarea id="pBox" placeholder="Curvy blonde, dancing, naked..."></textarea>
+        <span onclick="getSurprise()" style="position:absolute; right:10px; top:-25px; color:var(--red); font-size:11px; font-weight:bold; cursor:pointer;">✨ SURPRISE ME</span>
+    </div>
+
+    <div class="grid">
+        <div>
+            <label>20 Elite Styles</label>
+            <select id="sBox">
+                <option value="(unfiltered photorealistic masterpiece:1.8), 8k">Realistic</option>
+                <option value="(explicit uncensored hentai:1.9), 2D">Hentai</option>
+                <option value="(90s VHS movie:1.5), realistic">90s VHS</option>
+                <option value="(3D octane render:1.6), unreal">3D Render</option>
+                <option value="(cyberpunk neon:1.5)">Cyberpunk</option>
+                <option value="(gothic victorian:1.6)">Gothic</option>
+                <option value="(magazine photography:1.6)">Magazine</option>
+                <option value="(retro anime 80s:1.6)">80s Anime</option>
+                <option value="(pencil sketch:1.4)">Sketch</option>
+                <option value="(film noir:1.6)">Film Noir</option>
+            </select>
+        </div>
+        <div>
+            <label>Camera Angle</label>
+            <select id="aBox">
+                <option value="pov perspective">POV</option>
+                <option value="wide full body shot, (standing, feet visible:1.8)">Full Body</option>
+                <option value="handheld selfie">Selfie</option>
+                <option value="low angle looking up">Low Angle</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="pw"><div id="pf"></div></div>
+
+    <button id="genBtn" onmousedown="startGen()" class="btn">GENERATE PHOTO</button>
+
+    <div id="gal"></div>
+
+    <div class="banner-slot">
+        <a href="https://t.ajrkm.link/368319/3785/0" target="_blank"><img src="https://www.imglnkx.com/3785/010770D_GDAT_18_ALL_EN_71_L.gif"></a>
+    </div>
+</div>
+
+<script>
+let coins = parseInt(localStorage.getItem('coins_v121')) || 5;
+const adLinks = [
+    'https://t.bbwafx.com/ev4vyv30g0?url_id=37989&aff_id=368319&offer_id=10022',
+    'https://t.bbwafx.com/icrfvnptmo?url_id=0&aff_id=368319&offer_id=10163',
+    'https://t.bbwafx.com/qvoy1oi9ds?url_id=38987&aff_id=368319&offer_id=10219'
+];
+
+document.getElementById('cb').innerText = coins;
+
+function firePopup(idx) {
+    if(window.crakPopIn) {
+        crakPopIn.init({ url: adLinks[idx-1], contentType: 'iframe', width: '90%', height: '90%' });
+    }
+}
+
+function enterSite() {
+    document.getElementById('gate').style.display='none';
+    document.getElementById('mainUI').style.display='block';
+    document.getElementById('chatHeadScript').src="https://crxcr2.com/cams-widget-ext/im_jerky?lang=en&mode=prerecorded&outlinkUrl=https://t.acrsmartcam.com/368319/10301/39620";
+    firePopup(1);
+}
+
+function dailyReward() {
+    const last = localStorage.getItem('last_v121') || 0;
+    if(Date.now() - last > 86400000) { 
+        coins++; updateC(); localStorage.setItem('last_v121', Date.now()); alert("Daily Coin Added!"); 
+    } else { alert("Come back tomorrow!"); }
+}
+
+function refill() { window.open("https://t.crdtg3.com/368319/7028", '_blank'); coins+=5; updateC(); }
+function updateC() { document.getElementById('cb').innerText = coins; localStorage.setItem('coins_v121', coins); }
+
+function getSurprise() {
+    const s = ["curvy blonde", "pale goth", "fit ebony", "petite redhead"], a = ["naked", "selfie", "posing"];
+    document.getElementById('pBox').value = s[Math.floor(Math.random()*s.length)] + " " + a[Math.floor(Math.random()*a.length)];
+}
+
+async function startGen() {
+    const p = document.getElementById('pBox').value.toLowerCase();
+    if(["minor","teen","child","kid"].some(w => p.includes(w))) return alert("Safety Error.");
+    if(coins < 1) return alert("Refill coins!");
+
+    firePopup(2);
+    document.getElementById('genBtn').disabled = true;
+    document.getElementById('pw').style.display = 'block';
+    
+    let prg = 0;
+    const itv = setInterval(() => { prg += (99 - prg) * 0.15; document.getElementById('pf').style.width = prg + '%'; }, 300);
+
+    await callAI();
+
+    clearInterval(itv);
+    document.getElementById('pf').style.width = '100%'; 
+    coins--; updateC();
+    document.getElementById('genBtn').disabled = false;
+    setTimeout(() => { document.getElementById('pw').style.display='none'; document.getElementById('pf').style.width='0%'; }, 1000);
+}
+
+function callAI() {
+    return new Promise((resolve) => {
+        const p = document.getElementById('pBox').value, s = document.getElementById('sBox').value, a = document.getElementById('aBox').value;
+        const seed = Math.floor(Math.random()*9999999);
+        const t = Date.now();
+        
+        // UNCENSORED BYPASS & GENDER FOCUS
+        const pos = `(unfiltered explicit:1.8), (beautiful woman:1.9), ${p}, ${s}, ${a}, naked, detailed skin, 8k`;
+        const neg = `(man, male, masculine, beard:2.0), clothing, textile, fabric, child, minor`;
+        
+        // CACHE-BUSTING URL TO PREVENT LIMITS
+        const url = `https://pollinations.ai/p/${encodeURIComponent(pos)}?width=768&height=1024&seed=${seed}&model=flux&nologo=true&t=${t}&negative=${encodeURIComponent(neg)}`;
+        
+        const img = new Image();
+        img.src = url;
+        img.onload = () => {
+            const div = document.createElement('div');
+            div.className = "img-card";
+            div.innerHTML = `
+                <img src="${url}" style="width:100%">
+                <button onmousedown="firePopup(3); window.open('${url}')" class="btn" style="margin:0; border-radius:0;">DOWNLOAD HD</button>
+            `;
+            document.getElementById('gal').prepend(div);
+            resolve();
+        };
+        img.onerror = () => { resolve(); };
+        setTimeout(resolve, 12000);
+    });
+}
+</script>
+</body>
+</html>
