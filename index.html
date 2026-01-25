@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>X-GEN v157 | ULTIMATE</title>
+    <style>
+        :root { --red: #ff3838; --bg: #020617; --card: #0f172a; --border: #1e293b; --text: #94a3b8; }
+        body { margin: 0; background: var(--bg); color: white; font-family: 'Inter', sans-serif; padding-bottom: 40px; }
+        .overlay { position: fixed; inset: 0; background: rgba(2,6,23,0.99); z-index: 100000; display: flex; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(12px); }
+        .modal-box { width: 100%; max-width: 500px; background: var(--card); border: 1px solid var(--border); border-radius: 24px; padding: 30px; text-align: center; }
+        .legal-box { text-align: left; font-size: 11px; color: var(--text); background: #000; padding: 15px; border-radius: 12px; margin: 15px 0; max-height: 250px; overflow-y: auto; line-height: 1.6; border: 1px solid var(--border); }
+        #mainUI { display: none; max-width: 500px; margin: auto; padding: 15px; }
+        .btn { width: 100%; padding: 16px; background: var(--red); color: white; border: none; border-radius: 12px; font-weight: 800; cursor: pointer; text-transform: uppercase; margin: 8px 0; font-size: 14px; transition: 0.2s; box-shadow: 0 4px 15px rgba(255,56,56,0.3); }
+        textarea, select, input { width: 100%; padding: 12px; background: #0b0f19; border: 1px solid var(--border); color: white; border-radius: 10px; margin-top: 6px; box-sizing: border-box; font-size: 14px; }
+        label { font-size: 10px; color: #64748b; font-weight: 800; display: block; margin-top: 14px; text-transform: uppercase; letter-spacing: 1px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        #pw { width: 100%; background: #1e293b; height: 6px; border-radius: 10px; display: none; margin: 15px 0; overflow: hidden; }
+        #pf { width: 0%; height: 100%; background: var(--red); transition: width 0.4s; }
+        .banner-slot { width: 100%; margin: 15px 0; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: #000; }
+        .img-card { background: var(--card); border-radius: 20px; overflow: hidden; margin-bottom: 25px; border: 1px solid var(--border); }
+        .img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 4px; }
+        .img-grid img { width: 100%; aspect-ratio: inherit; object-fit: cover; background: #050a18; border-radius: 8px; }
+    </style>
+</head>
+<body>
+
+<div id="gate" class="overlay">
+    <div class="modal-box" style="border-top: 4px solid var(--red);">
+        <h1 style="color:white; margin:0; font-size: 24px;">18+ VERIFICATION</h1>
+        <p style="color:var(--text); margin: 15px 0;">This site contains uncensored AI content. You must be 18+ to enter.</p>
+        <button onclick="enterSite()" class="btn">I AM 18+ ENTER</button>
+        <button onclick="window.location.href='https://google.com'" style="background:none; border:none; color:#64748b; text-decoration:underline; cursor:pointer; margin-top:10px;">EXIT SITE</button>
+    </div>
+</div>
+
+<div id="legMod" class="overlay" style="display:none; z-index:100001;">
+    <div class="modal-box">
+        <h3 id="mT" style="color:white; margin:0; text-transform: uppercase;"></h3>
+        <div id="mB" class="legal-box"></div>
+        <button onclick="document.getElementById('legMod').style.display='none'" class="btn" style="background:#1e293b;">CLOSE</button>
+    </div>
+</div>
+
+<div id="mainUI">
+    <div class="banner-slot"><a href="https://t.amyfc.link/368319/779/22548" target="_blank"><img src="https://www.imglnkx.com/779/006611AX_FCAM_18_ALL_EN_71_L.gif" style="width:100%"></a></div>
+    
+    <div onclick="refillShuffle()" class="btn" style="background:transparent; border:2px solid var(--red); color:var(--red);">💰 BALANCE: <span id="cb">5</span> | REFILL (+5)</div>
+
+    <label>Prompt <span onclick="surprise()" style="color:var(--red); float:right; cursor:pointer; text-decoration:underline;">[SURPRISE ME]</span></label>
+    <textarea id="pBox" placeholder="Describe character and setting..."></textarea>
+    
+    <label>Negative Prompt</label>
+    <input id="nBox" type="text" placeholder="">
+
+    <div class="grid">
+        <div><label>20 Styles</label>
+            <select id="sBox">
+                <option value="photorealistic, 8k, raw photo">Realistic</option>
+                <option value="explicit hentai style art">Hentai</option>
+                <option value="1990s vhs tape grainy">90s VHS</option>
+                <option value="octane 3d render, hyper-detailed">3D Render</option>
+                <option value="vintage polaroid photo">Polaroid</option>
+                <option value="neon cyberpunk aesthetic">Cyberpunk</option>
+                <option value="dark gothic style">Gothic</option>
+                <option value="fashion magazine photography">Magazine</option>
+                <option value="80s retro anime style">80s Anime</option>
+                <option value="pencil sketch, charcoal">Sketch</option>
+                <option value="film noir, b&w">Noir</option>
+                <option value="pastel colors, soft">Pastel</option>
+                <option value="oil painting on canvas">Oil</option>
+                <option value="8-bit pixel art">Pixel</option>
+                <option value="candid street photo">Candid</option>
+                <option value="glamour studio lighting">Glamour</option>
+                <option value="fitness model, athletic">Fitness</option>
+                <option value="watercolor painting">Watercolor</option>
+                <option value="synthwave purple glow">Synthwave</option>
+                <option value="marvel comic book art">Comic</option>
+            </select>
+        </div>
+        <div><label>10 Angles</label>
+            <select id="aBox">
+                <option value="pov perspective">POV</option>
+                <option value="full body standing">Full Body</option>
+                <option value="smartphone selfie angle">Selfie</option>
+                <option value="view from behind">Behind</option>
+                <option value="low angle looking up">Low Angle</option>
+                <option value="high angle bird eye">High Angle</option>
+                <option value="close up portrait headshot">Portrait</option>
+                <option value="side profile view">Side View</option>
+                <option value="aerial drone view">Aerial</option>
+                <option value="macro lens detail">Macro</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div><label>10 Effects</label>
+            <select id="eBox">
+                <option value="">None</option>
+                <option value="vibrant neon glow">Neon</option>
+                <option value="bright natural sunlight">Sunlight</option>
+                <option value="wet skin texture, beads of water">Wet</option>
+                <option value="cinematic moody shadows">Moody</option>
+                <option value="thick foggy atmosphere">Foggy</option>
+                <option value="fast motion blur">Motion</option>
+                <option value="warm lens flare">Flare</option>
+                <option value="heavy 35mm film grain">Grain</option>
+                <option value="underwater blue lighting">Underwater</option>
+            </select>
+        </div>
+        <div><label>Qty / Size</label>
+            <div class="grid" style="margin:0; grid-template-columns: 0.5fr 1fr;">
+                <select id="qBox"><option value="1">1</option><option value="2">2</option><option value="4" selected>4</option></select>
+                <select id="szBox"><option value="768x1024">Portrait</option><option value="1024x768">Landscape</option><option value="1024x1024">Square</option></select>
+            </div>
+        </div>
+    </div>
+
+    <div id="pw"><div id="pf"></div></div>
+    <button id="genBtn" onclick="startGen()" class="btn">GENERATE UNCENSORED</button>
+
+    <div class="banner-slot"><a href="https://t.ajrkm.link/368319/3785/0" target="_blank"><img src="https://www.imglnkx.com/3785/010770D_GDAT_18_ALL_EN_71_L.gif" style="width:100%"></a></div>
+
+    <div id="gal"></div>
+
+    <div class="banner-slot"><a href="https://t.acrsmartcam.com/368319/3611/8425?bo=2779,2778,2777,2776,2775&po=6533" target="_blank"><img src="https://www.imglnkx.com/3785/005838A_GDAT_18_ALL_EN_71_L.gif" style="width:100%"></a></div>
+
+    <center style="font-size:11px; color:#64748b; padding-bottom:30px; line-height: 1.8;">
+        <span onclick="openLeg('Terms')" style="cursor:pointer; text-decoration:underline;">Detailed Terms</span> | 
+        <span onclick="openLeg('Privacy')" style="cursor:pointer; text-decoration:underline;">Detailed Privacy</span>
+    </center>
+</div>
+
+<script>
+let coins = parseInt(localStorage.getItem('coins')) || 5;
+function updateDisplay() { document.getElementById('cb').innerText = coins; }
+updateDisplay();
+
+const ads = [
+    "https://t.amyfc.link/368319/779/22548",
+    "https://t.ajrkm.link/368319/3785/0",
+    "https://t.acrsmartcam.com/368319/3611/8425?bo=2779,2778,2777,2776,2775&po=6533",
+    "https://t.crdtg3.com/368319/7028",
+    "https://t.acrsmartcam.com/368319/10301/39620"
+];
+
+function refillShuffle() {
+    window.open(ads[Math.floor(Math.random()*ads.length)], '_blank');
+    coins += 5; localStorage.setItem('coins', coins); updateDisplay();
+}
+
+function surprise() {
+    const s = ["fit blonde in gym, selfie","redhead bikini beach sunset","asian silk lingerie bedroom"];
+    document.getElementById('pBox').value = s[Math.floor(Math.random()*s.length)];
+}
+
+function enterSite() {
+    document.getElementById('gate').style.display='none';
+    document.getElementById('mainUI').style.display='block';
+}
+
+function openLeg(type) {
+    const t = document.getElementById('mT'), b = document.getElementById('mB');
+    if(type === 'Terms') {
+        t.innerText = "Terms of Service";
+        b.innerHTML = "<b>1. Eligibility:</b> You must be 18+ years of age. <b>2. AI Fictionality:</b> All characters depicted are 100% artificial intelligence creations. No real people are shown. <b>3. Usage:</b> Users are solely responsible for generated content. <b>4. Virtual Currency:</b> Credits have no cash value and are local to this browser.";
+    } else {
+        t.innerText = "Privacy Policy";
+        b.innerHTML = "<b>1. Anonymity:</b> We do not collect personal data, emails, or IP addresses. <b>2. Transient Data:</b> Prompts and images are processed in real-time and not stored on our database. <b>3. Local Data:</b> Coin balances are stored locally in your browser. <b>4. Third-Party Ads:</b> Advertisements lead to external sites with their own policies.";
+    }
+    document.getElementById('legMod').style.display = 'flex';
+}
+
+async function startGen() {
+    if(coins < 1) return alert("Refill Coins!");
+    const btn = document.getElementById('genBtn'); btn.disabled = true;
+    document.getElementById('pw').style.display = 'block';
+    
+    let pr = 0; const itv = setInterval(() => { pr += (95-pr)*0.03; document.getElementById('pf').style.width = pr+'%'; }, 200);
+
+    const q = parseInt(document.getElementById('qBox').value);
+    const sz = document.getElementById('szBox').value.split('x');
+    const card = document.createElement('div'); card.className = 'img-card';
+    const grid = document.createElement('div'); grid.className = 'img-grid';
+    grid.style.gridTemplateColumns = q === 1 ? '1fr' : '1fr 1fr';
+    card.appendChild(grid);
+    document.getElementById('gal').prepend(card);
+
+    // MULTI-ENGINE ROTATION: To bypass the "Anonymous Tier Limit" per model
+    const engines = ["flux", "flux-pro", "flux-realism", "any-dark"];
+
+    for(let i=0; i<q; i++) {
+        const engine = engines[i % engines.length]; // Each image in a set of 4 uses a different model
+        const salt = Math.random().toString(36).substring(7);
+        const p = `${document.getElementById('pBox').value}, ${document.getElementById('sBox').value}, ${document.getElementById('aBox').value}, ${document.getElementById('eBox').value}, id:${salt}`;
+        
+        // Jitter dimensions to force a new cache entry
+        const w = parseInt(sz[0]) + (i % 2); 
+        const h = parseInt(sz[1]);
+
+        const u = `https://image.pollinations.ai/prompt/${encodeURIComponent(p)}?width=${w}&height=${h}&seed=${Math.floor(Math.random()*1e9)}&nologo=true&model=${engine}&cb=${salt}`;
+        
+        const img = new Image();
+        img.src = u;
+        img.style.aspectRatio = `${w}/${h}`;
+        grid.appendChild(img);
+        
+        // 8 SECOND STAGGER: Essential for resetting IP-based rate flags
+        await new Promise(r => setTimeout(r, 8000));
+    }
+
+    clearInterval(itv);
+    coins -= 1; localStorage.setItem('coins', coins); updateDisplay();
+    btn.disabled = false; document.getElementById('pw').style.display = 'none';
+    document.getElementById('pf').style.width = '0%';
+}
+</script>
+</body>
+</html>
