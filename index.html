@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>X-GEN v146 | FINAL</title>
+    <script type="text/javascript" src="//static.scptp9.com/mnpw3.js"></script>
+    <script id="chatHeadScript" defer></script>
+    <style>
+        :root { --red: #ff3838; --bg: #050a18; --card: #0f172a; --border: #1e293b; --text: #94a3b8; }
+        body { margin: 0; background: var(--bg); color: white; font-family: 'Inter', sans-serif; padding-bottom: 100px; }
+        
+        /* MODALS */
+        .overlay { position: fixed; inset: 0; background: rgba(2,6,23,0.95); z-index: 100000; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .modal-box { width: 100%; max-width: 480px; background: var(--card); border: 2px solid var(--red); border-radius: 20px; padding: 25px; text-align: center; }
+        .legal-box { text-align: left; font-size: 12px; color: var(--text); background: #020617; padding: 15px; border-radius: 10px; margin: 15px 0; max-height: 200px; overflow-y: auto; }
+
+        /* UI */
+        #mainUI { display: none; max-width: 500px; margin: auto; padding: 15px; }
+        .btn { width: 100%; padding: 16px; background: var(--red); color: white; border: none; border-radius: 12px; font-weight: 800; cursor: pointer; text-transform: uppercase; margin: 8px 0; font-size: 14px; }
+        textarea, select, input { width: 100%; padding: 14px; background: #0b0f19; border: 1px solid var(--border); color: white; border-radius: 10px; margin-top: 6px; box-sizing: border-box; font-size: 14px; }
+        label { font-size: 11px; color: #64748b; font-weight: 700; display: block; margin-top: 15px; text-transform: uppercase; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        
+        /* BANNERS */
+        .banner-slot { width: 100%; margin: 20px 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+        .banner-slot img { display: block; width: 100%; }
+
+        /* GALLERY */
+        .img-card { background: var(--card); border-radius: 16px; overflow: hidden; margin-bottom: 25px; border: 1px solid var(--border); }
+        .img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+        .img-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; cursor: pointer; }
+
+        /* PROGRESS */
+        #pw { width: 100%; background: #0f172a; height: 6px; border-radius: 3px; display: none; margin: 15px 0; overflow: hidden; }
+        #pf { width: 0%; height: 100%; background: var(--red); transition: width 0.3s; }
+    </style>
+</head>
+<body>
+
+<div id="gate" class="overlay">
+    <div class="modal-box">
+        <h1 style="color:var(--red);">18+ VERIFIED</h1>
+        <p style="color:var(--text);">Access uncensored AI generation. Confirm your age.</p>
+        <button onclick="enterSite()" class="btn">I AM 18+ ENTER</button>
+    </div>
+</div>
+
+<div id="legMod" class="overlay" style="display:none; z-index:100001;">
+    <div class="modal-box">
+        <h3 id="mT" style="color:white;"></h3>
+        <div id="mB" class="legal-box"></div>
+        <button onclick="document.getElementById('legMod').style.display='none'" class="btn">CLOSE</button>
+    </div>
+</div>
+
+<div id="mainUI">
+    <div class="banner-slot"><a href="https://t.amyfc.link/368319/779/22548" target="_blank"><img src="https://www.imglnkx.com/779/006611AX_FCAM_18_ALL_EN_71_L.gif"></a></div>
+    
+    <div onclick="refillShuffle()" class="btn" style="background:transparent; border:2px solid var(--red); color:var(--red);">
+        💰 BALANCE: <span id="cb">5</span> | REFILL (+5)
+    </div>
+
+    <label>Prompt <span onclick="surprise()" style="color:var(--red); float:right; cursor:pointer;">[SURPRISE ME]</span></label>
+    <textarea id="pBox" placeholder="Describe her..."></textarea>
+    
+    <label>Negative Prompt (Exclude)</label>
+    <input id="nBox" type="text" placeholder="clothes, man, blurry, bad quality" value="clothes, man, blurry, bad quality">
+
+    <div class="grid">
+        <div><label>20 Styles</label>
+            <select id="sBox">
+                <option value="raw photo, 8k, realistic">Realistic</option><option value="explicit hentai style">Hentai</option>
+                <option value="90s vhs">90s VHS</option><option value="3d render">3D Render</option>
+                <option value="polaroid">Polaroid</option><option value="cyberpunk">Cyberpunk</option>
+                <option value="gothic">Gothic</option><option value="magazine">Magazine</option>
+                <option value="80s anime">80s Anime</option><option value="sketch">Sketch</option>
+                <option value="noir">Noir</option><option value="pastel">Pastel</option>
+                <option value="oil painting">Oil</option><option value="pixel art">Pixel</option>
+                <option value="candid">Candid</option><option value="glamour">Glamour</option>
+                <option value="fitness">Fitness</option><option value="watercolor">Watercolor</option>
+                <option value="synthwave">Synthwave</option><option value="comic">Comic</option>
+            </select>
+        </div>
+        <div><label>10 Angles</label>
+            <select id="aBox">
+                <option value="pov">POV</option><option value="full body">Full Body</option>
+                <option value="selfie">Selfie</option><option value="from behind">Behind</option>
+                <option value="low angle">Low Angle</option><option value="high angle">High Angle</option>
+                <option value="portrait">Portrait</option><option value="side view">Side View</option>
+                <option value="aerial">Aerial</option><option value="macro">Macro</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div><label>10 Effects</label>
+            <select id="eBox">
+                <option value="">None</option><option value="neon lighting">Neon</option>
+                <option value="sunlight">Sunlight</option><option value="wet skin">Wet</option>
+                <option value="shadows">Moody</option><option value="foggy">Foggy</option>
+                <option value="motion blur">Motion</option><option value="lens flare">Flare</option>
+                <option value="film grain">Grain</option><option value="underwater">Underwater</option>
+            </select>
+        </div>
+        <div><label>Qty / Size</label>
+            <div class="grid" style="grid-template-columns: 0.5fr 1fr; gap:5px; margin:0;">
+                <select id="qBox"><option value="1">1</option><option value="2">2</option><option value="4" selected>4</option></select>
+                <select id="szBox"><option value="768x1024">Portrait</option><option value="1024x768">Landscape</option><option value="1024x1024">Square</option></select>
+            </div>
+        </div>
+    </div>
+
+    <div id="pw"><div id="pf"></div></div>
+    <button id="genBtn" onclick="startGen()" class="btn">GENERATE UNCENSORED</button>
+    <div class="banner-slot"><a href="https://t.ajrkm.link/368319/3785/0" target="_blank"><img src="https://www.imglnkx.com/3785/010770D_GDAT_18_ALL_EN_71_L.gif"></a></div>
+    
+    <div id="gal"></div>
+
+    <div class="banner-slot"><a href="https://t.acrsmartcam.com/368319/3611/8425?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN" target="_blank"><img src="https://www.imglnkx.com/3785/005838A_GDAT_18_ALL_EN_71_L.gif"></a></div>
+    
+    <center style="font-size:11px; color:#64748b; padding:20px;">
+        <span onclick="openLeg('Terms')" style="cursor:pointer; text-decoration:underline;">Terms</span> | 
+        <span onclick="openLeg('Privacy')" style="cursor:pointer; text-decoration:underline;">Privacy</span>
+    </center>
+</div>
+
+<script>
+let coins = parseInt(localStorage.getItem('coins')) || 5;
+document.getElementById('cb').innerText = coins;
+
+function addCoins(n) { coins += n; localStorage.setItem('coins', coins); document.getElementById('cb').innerText = coins; }
+
+function refillShuffle() {
+    const links = ["https://t.crdtg3.com/368319/7028", "https://t.acrsmartcam.com/368319/3611/8425?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN"];
+    window.open(links[Math.floor(Math.random()*links.length)], '_blank');
+    addCoins(5);
+}
+
+function surprise() {
+    const p = ["fit blonde, mirror selfie, bedroom","redhead, freckles, beach, bikini","asian model, silk lingerie, balcony"];
+    document.getElementById('pBox').value = p[Math.floor(Math.random()*p.length)];
+}
+
+function enterSite() {
+    document.getElementById('gate').style.display='none';
+    document.getElementById('mainUI').style.display='block';
+    document.getElementById('chatHeadScript').src="https://crxcr2.com/cams-widget-ext/im_jerky?lang=en&mode=prerecorded&outlinkUrl=https://t.acrsmartcam.com/368319/10301/39620";
+    
+    const today = new Date().toDateString();
+    if(localStorage.getItem('lastD') !== today) {
+        addCoins(1); localStorage.setItem('lastD', today);
+        alert("Daily Bonus: +1 Credit Added!");
+    }
+}
+
+function openLeg(type) {
+    const t = document.getElementById('mT'), b = document.getElementById('mB');
+    if(type === 'Terms') { t.innerText = "Terms of Service"; b.innerHTML = "18+ Only. All images are AI generated. No real persons involved. Use responsibly."; }
+    else { t.innerText = "Privacy Policy"; b.innerHTML = "We do not store your prompts or images. Coin data is stored locally on your device browser."; }
+    document.getElementById('legMod').style.display = 'flex';
+}
+
+async function startGen() {
+    if(coins < 1) return alert("Refill coins!");
+    const btn = document.getElementById('genBtn'); btn.disabled = true;
+    document.getElementById('pw').style.display = 'block';
+    let pr = 0; const itv = setInterval(() => { pr += (95-pr)*0.1; document.getElementById('pf').style.width = pr+'%'; }, 200);
+
+    const q = parseInt(document.getElementById('qBox').value), d = document.getElementById('szBox').value.split('x');
+    const prompt = `(uncensored, naked, masterpiece:1.4), ${document.getElementById('pBox').value}, ${document.getElementById('sBox').value}, ${document.getElementById('aBox').value}, ${document.getElementById('eBox').value}, 8k, raw photo`;
+    const neg = `(child, minor, clothes:2.0), ${document.getElementById('nBox').value}`;
+
+    const card = document.createElement('div'); card.className = 'img-card';
+    const grid = document.createElement('div'); grid.className = 'img-grid';
+    grid.style.gridTemplateColumns = q === 1 ? '1fr' : '1fr 1fr';
+    card.appendChild(grid);
+    document.getElementById('gal').prepend(card);
+
+    for(let i=0; i<q; i++) {
+        const u = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=${d[0]}&height=${d[1]}&seed=${Math.floor(Math.random()*1e9)}&nologo=true&negative=${encodeURIComponent(neg)}&t=${Date.now()+i}`;
+        const img = new Image();
+        img.src = u;
+        img.onclick = () => window.open(u, '_blank');
+        grid.appendChild(img);
+        // Sequential staggering to prevent API block
+        await new Promise(res => setTimeout(res, 800));
+    }
+
+    clearInterval(itv);
+    addCoins(-1); 
+    btn.disabled = false; document.getElementById('pw').style.display = 'none';
+    document.getElementById('pf').style.width = '0%';
+}
+</script>
+</body>
+</html>
