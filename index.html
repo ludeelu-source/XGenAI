@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>X-GEN v150 | UNLIMITED</title>
+    <script type="text/javascript" src="//static.scptp9.com/mnpw3.js"></script>
+    <script id="chatHeadScript" defer></script>
+    <style>
+        :root { --red: #ff3838; --bg: #050a18; --card: #0f172a; --border: #1e293b; --text: #94a3b8; }
+        body { margin: 0; background: var(--bg); color: white; font-family: 'Inter', sans-serif; padding-bottom: 120px; }
+        .overlay { position: fixed; inset: 0; background: rgba(2,6,23,0.98); z-index: 100000; display: flex; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(8px); }
+        .modal-box { width: 100%; max-width: 450px; background: var(--card); border: 2px solid var(--red); border-radius: 20px; padding: 30px; text-align: center; }
+        .legal-box { text-align: left; font-size: 12px; color: var(--text); background: #020617; padding: 15px; border-radius: 10px; margin: 15px 0; max-height: 200px; overflow-y: auto; }
+        #mainUI { display: none; max-width: 500px; margin: auto; padding: 15px; }
+        .btn { width: 100%; padding: 16px; background: var(--red); color: white; border: none; border-radius: 12px; font-weight: 900; cursor: pointer; text-transform: uppercase; margin: 8px 0; font-size: 14px; }
+        .btn:disabled { background: #334155; opacity: 0.7; }
+        textarea, select, input { width: 100%; padding: 14px; background: #0b0f19; border: 1px solid var(--border); color: white; border-radius: 10px; margin-top: 6px; box-sizing: border-box; }
+        label { font-size: 11px; color: #64748b; font-weight: 800; display: block; margin-top: 15px; text-transform: uppercase; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        #pw { width: 100%; background: #0f172a; height: 8px; border-radius: 5px; display: none; margin: 15px 0; overflow: hidden; }
+        #pf { width: 0%; height: 100%; background: var(--red); transition: width 0.3s; }
+        .banner-slot { width: 100%; margin: 20px 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); background: #000; }
+        .img-card { background: var(--card); border-radius: 16px; overflow: hidden; margin-bottom: 25px; border: 1px solid var(--border); }
+        .img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 8px; }
+        .img-grid img { width: 100%; background: #020617; min-height: 150px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+<div id="gate" class="overlay">
+    <div class="modal-box">
+        <h1 style="color:var(--red); margin:0;">18+ VERIFICATION</h1>
+        <p style="color:var(--text); margin: 20px 0;">Confirmed: Flux Engine v2.0 Integrated.<br>Access restricted to 18+ only.</p>
+        <button onclick="enterSite()" class="btn">I AM 18+ ENTER</button>
+        <button onclick="window.location.href='https://google.com'" style="background:none; border:none; color:#64748b; text-decoration:underline; cursor:pointer; margin-top:10px;">EXIT TO GOOGLE</button>
+    </div>
+</div>
+
+<div id="legMod" class="overlay" style="display:none; z-index:100001;">
+    <div class="modal-box">
+        <h3 id="mT" style="color:white; margin:0;"></h3>
+        <div id="mB" class="legal-box"></div>
+        <button onclick="document.getElementById('legMod').style.display='none'" class="btn" style="background:#1e293b;">CLOSE</button>
+    </div>
+</div>
+
+<div id="mainUI">
+    <div class="banner-slot"><a href="https://t.amyfc.link/368319/779/22548" target="_blank"><img src="https://www.imglnkx.com/779/006611AX_FCAM_18_ALL_EN_71_L.gif" style="width:100%"></a></div>
+    
+    <div onclick="refillShuffle()" class="btn" style="background:none; border:2px solid var(--red); color:var(--red);">💰 BALANCE: <span id="cb">5</span> | REFILL (+5)</div>
+
+    <label>Prompt <span onclick="surprise()" style="color:var(--red); float:right; cursor:pointer; text-decoration:underline;">[SURPRISE ME]</span></label>
+    <textarea id="pBox" placeholder="Describe character and setting..."></textarea>
+    
+    <label>Negative Prompt</label>
+    <input id="nBox" type="text" placeholder="blurry, distorted, low quality...">
+
+    <div class="grid">
+        <div><label>20 Styles</label>
+            <select id="sBox">
+                <option value="photorealistic, 8k, raw">Realistic</option>
+                <option value="explicit hentai style">Hentai</option>
+                <option value="vhs tape 1990s">90s VHS</option>
+                <option value="octane 3d render">3D Render</option>
+                <option value="polaroid photo">Polaroid</option>
+                <option value="neon cyberpunk">Cyberpunk</option>
+                <option value="gothic style">Gothic</option>
+                <option value="fashion photography">Magazine</option>
+                <option value="retro anime">80s Anime</option>
+                <option value="pencil sketch">Sketch</option>
+                <option value="film noir b&w">Noir</option>
+                <option value="pastel colors">Pastel</option>
+                <option value="oil painting canvas">Oil</option>
+                <option value="pixel art 8bit">Pixel</option>
+                <option value="candid street photography">Candid</option>
+                <option value="glamour studio light">Glamour</option>
+                <option value="fitness model photography">Fitness</option>
+                <option value="watercolor art">Watercolor</option>
+                <option value="synthwave aesthetic">Synthwave</option>
+                <option value="marvel comic style">Comic</option>
+            </select>
+        </div>
+        <div><label>10 Angles</label>
+            <select id="aBox">
+                <option value="pov perspective">POV</option>
+                <option value="full body portrait">Full Body</option>
+                <option value="iphone selfie">Selfie</option>
+                <option value="view from behind">Behind</option>
+                <option value="low angle perspective">Low Angle</option>
+                <option value="high angle bird eye">High Angle</option>
+                <option value="headshot portrait">Portrait</option>
+                <option value="side profile view">Side View</option>
+                <option value="aerial view">Aerial</option>
+                <option value="macro zoom lens">Macro</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div><label>10 Effects</label>
+            <select id="eBox">
+                <option value="">None</option>
+                <option value="neon glow">Neon</option>
+                <option value="natural sunlight">Sunlight</option>
+                <option value="sweaty wet skin">Wet</option>
+                <option value="cinematic shadows">Moody</option>
+                <option value="thick fog">Foggy</option>
+                <option value="motion blur effect">Motion</option>
+                <option value="anamorphic lens flare">Flare</option>
+                <option value="35mm film grain">Grain</option>
+                <option value="underwater scene">Underwater</option>
+            </select>
+        </div>
+        <div><label>Qty / Size</label>
+            <div class="grid" style="margin:0; grid-template-columns: 0.5fr 1fr;">
+                <select id="qBox"><option value="1">1</option><option value="2">2</option><option value="4" selected>4</option></select>
+                <select id="szBox"><option value="768x1024">Portrait</option><option value="1024x768">Landscape</option><option value="1024x1024">Square</option></select>
+            </div>
+        </div>
+    </div>
+
+    <div id="pw"><div id="pf"></div></div>
+    <button id="genBtn" onclick="startGen()" class="btn">GENERATE HQ</button>
+
+    <div class="banner-slot"><a href="https://t.ajrkm.link/368319/3785/0" target="_blank"><img src="https://www.imglnkx.com/3785/010770D_GDAT_18_ALL_EN_71_L.gif" style="width:100%"></a></div>
+    <div id="gal"></div>
+    <div class="banner-slot"><a href="https://t.acrsmartcam.com/368319/3611/8425?bo=2779,2778,2777,2776,2775&po=6533" target="_blank"><img src="https://www.imglnkx.com/3785/005838A_GDAT_18_ALL_EN_71_L.gif" style="width:100%"></a></div>
+
+    <center style="font-size:11px; color:#64748b; padding-bottom:40px;">
+        <span onclick="openLeg('Terms')" style="cursor:pointer; text-decoration:underline;">Terms of Service</span> | 
+        <span onclick="openLeg('Privacy')" style="cursor:pointer; text-decoration:underline;">Privacy Policy</span>
+    </center>
+</div>
+
+<script>
+let coins = parseInt(localStorage.getItem('coins')) || 5;
+function updateDisplay() { document.getElementById('cb').innerText = coins; }
+updateDisplay();
+
+const adLinks = [
+    "https://t.amyfc.link/368319/779/22548",
+    "https://t.ajrkm.link/368319/3785/0",
+    "https://t.acrsmartcam.com/368319/3611/8425?bo=2779,2778,2777,2776,2775&po=6533",
+    "https://t.crdtg3.com/368319/7028",
+    "https://t.acrsmartcam.com/368319/10301/39620"
+];
+
+function refillShuffle() {
+    window.open(adLinks[Math.floor(Math.random()*adLinks.length)], '_blank');
+    coins += 5; 
+    localStorage.setItem('coins', coins);
+    updateDisplay();
+}
+
+function surprise() {
+    const p = ["young fitness blonde, mirror selfie, gym gear","curvy redhead, freckles, beach bikini, sunset","asian girl, silk lingerie, luxury hotel"];
+    document.getElementById('pBox').value = p[Math.floor(Math.random()*p.length)];
+}
+
+function enterSite() {
+    document.getElementById('gate').style.display='none';
+    document.getElementById('mainUI').style.display='block';
+    document.getElementById('chatHeadScript').src="https://crxcr2.com/cams-widget-ext/im_jerky?lang=en&mode=prerecorded&outlinkUrl=https://t.acrsmartcam.com/368319/10301/39620";
+}
+
+function openLeg(type) {
+    const t = document.getElementById('mT'), b = document.getElementById('mB');
+    if(type === 'Terms') { t.innerText = "Terms of Service"; b.innerHTML = "18+ Only. All imagery is artificial AI. No real individuals depicted."; }
+    else { t.innerText = "Privacy Policy"; b.innerHTML = "No personal data collection. Credits stored locally."; }
+    document.getElementById('legMod').style.display = 'flex';
+}
+
+async function startGen() {
+    if(coins < 1) return alert("Refill coins!");
+    const btn = document.getElementById('genBtn');
+    btn.disabled = true;
+    document.getElementById('pw').style.display = 'block';
+    
+    let pr = 0; 
+    const itv = setInterval(() => { pr += (95-pr)*0.05; document.getElementById('pf').style.width = pr+'%'; }, 100);
+
+    const q = parseInt(document.getElementById('qBox').value);
+    const d = document.getElementById('szBox').value.split('x');
+    const userP = document.getElementById('pBox').value;
+    const styleP = document.getElementById('sBox').value;
+    const angleP = document.getElementById('aBox').value;
+    const effP = document.getElementById('eBox').value;
+    const negP = document.getElementById('nBox').value;
+
+    const card = document.createElement('div'); card.className = 'img-card';
+    const grid = document.createElement('div'); grid.className = 'img-grid';
+    grid.style.gridTemplateColumns = q === 1 ? '1fr' : '1fr 1fr';
+    card.appendChild(grid);
+    document.getElementById('gal').prepend(card);
+
+    for(let i=0; i<q; i++) {
+        // ENHANCED BYPASS: Adding a unique cache-buster & randomized noise to prompt
+        const uniqueSalt = (Math.random() + 1).toString(36).substring(7);
+        const finalPrompt = `${userP}, ${styleP}, ${angleP}, ${effP}, high quality --${uniqueSalt}`;
+        
+        const img = new Image();
+        img.src = `https://image.pollinations.ai/prompt/${encodeURIComponent(finalPrompt)}?width=${d[0]}&height=${d[1]}&seed=${Math.floor(Math.random()*1e9)}&nologo=true&negative=${encodeURIComponent(negP)}`;
+        img.style.width = '100%';
+        img.onclick = () => window.open(img.src, '_blank');
+        grid.appendChild(img);
+
+        // STAGGERED LOADING: Waits longer between requests to avoid IP Ban
+        await new Promise(r => setTimeout(r, 2000));
+    }
+
+    clearInterval(itv);
+    coins -= 1;
+    localStorage.setItem('coins', coins);
+    updateDisplay();
+    btn.disabled = false;
+    document.getElementById('pw').style.display = 'none';
+    document.getElementById('pf').style.width = '0%';
+}
+</script>
+</body>
+</html>
