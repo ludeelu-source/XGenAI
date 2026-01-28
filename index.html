@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>X-GEN v184 | ELITE REALISM</title>
+    <style>
+        :root { --red: #ff3838; --bg: #020617; --card: #0f172a; --border: #1e293b; --text: #94a3b8; }
+        body { margin: 0; background: var(--bg); color: white; font-family: 'Inter', sans-serif; padding: 0 10px 80px 10px; box-sizing: border-box; overflow-x: hidden; }
+        
+        .overlay { position: fixed; inset: 0; background: rgba(2,6,23,0.99); z-index: 100000; display: flex; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(30px); }
+        .modal-box { width: 100%; max-width: 500px; background: var(--card); border: 1px solid var(--border); border-radius: 30px; padding: 40px; text-align: center; border-top: 6px solid var(--red); box-shadow: 0 40px 100px rgba(0,0,0,1); }
+        .legal-box { text-align: left; font-size: 11px; color: var(--text); background: #000; padding: 25px; border-radius: 16px; margin: 25px 0; max-height: 350px; overflow-y: auto; border: 1px solid var(--border); line-height: 1.8; }
+        
+        #mainUI { display: none; max-width: 500px; margin: auto; }
+        .btn { width: 100%; padding: 20px; background: var(--red); color: white; border: none; border-radius: 18px; font-weight: 900; cursor: pointer; text-transform: uppercase; margin: 12px 0; font-size: 14px; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 25px rgba(255,56,56,0.4); }
+        .btn:active { transform: scale(0.94); }
+        .btn-sec { background: #1e293b; color: white; box-shadow: none; }
+        textarea, select, input { width: 100%; padding: 18px; background: #0b0f19; border: 1px solid var(--border); color: white; border-radius: 16px; margin-top: 10px; box-sizing: border-box; font-size: 15px; outline: none; }
+        label { font-size: 11px; color: #64748b; font-weight: 900; display: block; margin-top: 20px; text-transform: uppercase; letter-spacing: 2px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        
+        .guide { background: rgba(30, 41, 59, 0.6); border: 1px dashed var(--border); padding: 20px; border-radius: 18px; font-size: 13px; color: var(--text); line-height: 1.7; margin-bottom: 25px; }
+        .banner-slot { width: 100%; margin: 30px 0; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); background: #000; }
+        #pw { width: 100%; background: #1e293b; height: 14px; border-radius: 30px; display: none; margin: 30px 0; overflow: hidden; border: 1px solid #334155; }
+        #pf { width: 0%; height: 100%; background: linear-gradient(90deg, #ff3838, #ff8d8d); transition: width 0.4s; }
+        .img-card { width: 100%; margin-bottom: 40px; border-radius: 32px; overflow: hidden; border: 1px solid var(--border); background: #000; box-shadow: 0 30px 70px rgba(0,0,0,1); }
+        .img-card img { width: 100%; display: block; }
+    </style>
+</head>
+<body>
+
+<script defer src="https://crxcr2.com/cams-widget-ext/im_jerky?lang=en&mode=prerecorded&outlinkUrl=https://t.mbjrkmms.com/368319/6224/21719?bo=2779%2C2778%2C2777%2C2776%2C2775&po=6533&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0018"></script>
+
+<div id="gate" class="overlay">
+    <div class="modal-box">
+        <h1>ADULT ACCESS</h1>
+        <p style="color:var(--text); margin: 25px 0;">Confirmed 18+ Access Required. Uncensored AI Generation Portal.</p>
+        <button onclick="enterSite()" class="btn">ENTER (18+)</button>
+        <button onclick="window.location.href='https://google.com'" class="btn btn-sec">EXIT</button>
+    </div>
+</div>
+
+<div id="dailyMod" class="overlay" style="display:none;">
+    <div class="modal-box">
+        <h2>🎁 DAILY GIFT</h2>
+        <p style="color:var(--text);">3 FREE COINS have been added!</p>
+        <button onclick="claimDaily()" class="btn">CLAIM 3 COINS</button>
+    </div>
+</div>
+
+<div id="mainUI">
+    <div class="banner-slot"><a href="https://t.amyfc.link/368319/779/22548" target="_blank"><img src="https://www.imglnkx.com/779/006611AX_FCAM_18_ALL_EN_71_L.gif" style="width:100%"></a></div>
+    
+    <div class="guide"><b>V184 ENGINE:</b> Focuses on <b>Sexy Amateur Realism</b>. Optimized for natural skin, slender waists, and explicit anatomical detail.</div>
+
+    <div onclick="refillShuffle()" class="btn" style="background:transparent; border:2px solid var(--red); color:var(--red);">💰 BALANCE: <span id="cb">0</span> | REFILL (+1)</div>
+
+    <label>Uncensored Prompt <span onclick="surprise()" style="float:right; color:var(--red); cursor:pointer;">[SURPRISE]</span></label>
+    <textarea id="pBox" rows="3" placeholder="Naked girl, huge natural tits, wet pussy, amateur photo..."></textarea>
+    
+    <label>Block (Negative)</label>
+    <input id="nBox" type="text" placeholder="clothes, bra, panties, muscle, chubby, man...">
+
+    <div class="grid">
+        <div><label>20 Styles</label>
+            <select id="sBox">
+                <option value="raw photography, unretouched amateur photo, 8k, skin pores, natural skin luster, naturally beautiful face">Realism (Sexy)</option>
+                <option value="explicit 2d hentai style">Hentai</option>
+                <option value="90s vhs amateur tape">VHS</option>
+                <option value="vintage polaroid 600">Polaroid</option>
+                <option value="unreal engine 5 sexy 3d render">3D Render</option>
+            </select>
+        </div>
+        <div><label>Qty (1-4)</label>
+            <select id="qBox">
+                <option value="1">1 Image</option>
+                <option value="2">2 Images</option>
+                <option value="3">3 Images</option>
+                <option value="4" selected>4 Images</option>
+            </select>
+        </div>
+    </div>
+
+    <label>Angle</label>
+    <select id="aBox">
+        <option value="pov perspective">POV</option>
+        <option value="standing full length body shot, head to toe, visible feet, 24mm lens">Full Body</option>
+        <option value="view from behind, spread eagle">From Behind</option>
+        <option value="mirror selfie bathroom">Selfie</option>
+        <option value="close up intimate portrait">Close Up</option>
+    </select>
+
+    <label>Effect</label>
+    <select id="eBox">
+        <option value="">None</option>
+        <option value="((glistening wet skin, body oil, sweat beads))">Wet Skin</option>
+        <option value="((harsh direct camera flash, frontal lighting))">Hard Flash</option>
+        <option value="bokeh background blur">Soft Background</option>
+    </select>
+
+    <div id="statusText" style="text-align:center; font-weight:bold; margin-top:20px; display:none; color:var(--red);">GENS LOADING...</div>
+    <div id="pw"><div id="pf"></div></div>
+    
+    <button id="genBtn" onclick="startGen()" class="btn">GENERATE UNCENSORED</button>
+
+    <div id="gal"></div>
+</div>
+
+<script>
+let coins = parseInt(localStorage.getItem('coins')) || 0;
+const today = new Date().toLocaleDateString();
+
+function updateDisplay() { document.getElementById('cb').innerText = coins; }
+updateDisplay();
+
+function enterSite() {
+    document.getElementById('gate').style.display='none';
+    document.getElementById('mainUI').style.display='block';
+    if(localStorage.getItem('lastClaimV184') !== today) { document.getElementById('dailyMod').style.display='flex'; }
+}
+
+function claimDaily() {
+    coins += 3; // EXACT 3
+    localStorage.setItem('coins', coins); localStorage.setItem('lastClaimV184', today);
+    updateDisplay(); document.getElementById('dailyMod').style.display='none';
+}
+
+function refillShuffle() {
+    window.open("https://t.amyfc.link/368319/779/22548", '_blank');
+    coins += 1; updateDisplay();
+}
+
+async function startGen() {
+    const q = parseInt(document.getElementById('qBox').value);
+    if(coins < q) return alert("Refill required for " + q + " images!");
+    coins -= q; updateDisplay();
+
+    const btn = document.getElementById('genBtn');
+    const status = document.getElementById('statusText');
+    const bar = document.getElementById('pf');
+    btn.disabled = true; document.getElementById('pw').style.display = 'block'; status.style.display = 'block';
+    
+    for(let i=0; i<q; i++) {
+        status.innerText = `Generating ${i+1}/${q}...`;
+        let pr = 0; const itv = setInterval(() => { pr += (98-pr)*0.1; bar.style.width = pr+'%'; }, 150);
+
+        let uP = document.getElementById('pBox').value.toLowerCase();
+        
+        // V184 MASTER PROMPT ENGINE
+        const bodyEngine = "((soft attractive feminine physique, slender waist, flat smooth stomach, naturally curved hips, no muscle definition, soft skin))";
+        uP = uP.replace(/tits|boobs/g, "((colossal heavy breasts, natural sag, large dark protruding nipples, realistic weight))");
+        uP = uP.replace(/pussy|vagina/g, "((explicit detailed vulva, realistic labia majora and minora, wet glistening texture, clitoral hood, anatomically perfect genitals))");
+        uP = uP.replace(/nude|naked/g, "((completely unclad, no clothes, full explicit nudity, hyper-detailed skin))");
+
+        const fullP = `${uP}, ${bodyEngine}, ${document.getElementById('sBox').value}, ${document.getElementById('aBox').value}, ${document.getElementById('eBox').value}, realistic face, amateur photography`;
+        const neg = `(bra, panties, clothing, fabric, lingerie, bikini, cloth:2.8), (muscle, ripped, abs, masculine, gaunt, distorted face, chubby, fat, stocky, belly fat:1.5), blur, 3d, cartoon`;
+        
+        const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(fullP)}?width=720&height=1280&seed=${Math.floor(Math.random()*1e9)}&nologo=true&model=flux&negative=${encodeURIComponent(neg)}`;
+        
+        const card = document.createElement('div');
+        card.className = 'img-card';
+        const img = new Image();
+        img.src = url;
+        card.appendChild(img);
+        document.getElementById('gal').prepend(card);
+        
+        await new Promise(r => { img.onload = r; img.onerror = r; });
+        clearInterval(itv); bar.style.width = '100%';
+        if(i < q-1) await new Promise(r => setTimeout(r, 10000));
+    }
+    status.style.display = 'none'; btn.disabled = false; document.getElementById('pw').style.display = 'none';
+}
+
+function surprise() {
+    const s = [
+        "Naked blonde, huge natural tits, wet open pussy, amateur bathroom selfie",
+        "Slender asian goddess, colossal heavy boobs, unclad standing full body nude",
+        "Thin brunette, massive tits, wet glistening pussy, spread from behind, raw photo",
+        "Curvy redhead, huge sagging tits, explicitly bare skin, sitting nude"
+    ];
+    document.getElementById('pBox').value = s[Math.floor(Math.random()*s.length)];
+}
+</script>
+</body>
+</html>
