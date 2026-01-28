@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>X-GEN v180 | ELITE UNCENSORED PORTAL</title>
+    <style>
+        :root { --red: #ff3838; --bg: #020617; --card: #0f172a; --border: #1e293b; --text: #94a3b8; }
+        body { margin: 0; background: var(--bg); color: white; font-family: 'Inter', sans-serif; padding: 0 10px 80px 10px; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        /* MODALS */
+        .overlay { position: fixed; inset: 0; background: rgba(2,6,23,0.98); z-index: 100000; display: flex; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(20px); }
+        .modal-box { width: 100%; max-width: 500px; background: var(--card); border: 1px solid var(--border); border-radius: 24px; padding: 35px; text-align: center; box-shadow: 0 25px 50px rgba(0,0,0,1); border-top: 4px solid var(--red); }
+        .legal-box { text-align: left; font-size: 11px; color: var(--text); background: #000; padding: 18px; border-radius: 12px; margin: 20px 0; max-height: 250px; overflow-y: auto; border: 1px solid var(--border); line-height: 1.6; }
+        
+        /* UI */
+        #mainUI { display: none; max-width: 500px; margin: auto; }
+        .btn { width: 100%; padding: 18px; background: var(--red); color: white; border: none; border-radius: 14px; font-weight: 800; cursor: pointer; text-transform: uppercase; margin: 10px 0; font-size: 13px; transition: 0.2s; box-shadow: 0 5px 15px rgba(255,56,56,0.2); }
+        .btn:active { transform: scale(0.97); }
+        .btn-sec { background: #1e293b; color: white; box-shadow: none; }
+        textarea, select, input { width: 100%; padding: 15px; background: #0b0f19; border: 1px solid var(--border); color: white; border-radius: 12px; margin-top: 8px; box-sizing: border-box; font-size: 14px; outline: none; }
+        label { font-size: 10px; color: #64748b; font-weight: 900; display: block; margin-top: 15px; text-transform: uppercase; letter-spacing: 1.5px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        
+        .guide { background: rgba(30, 41, 59, 0.4); border: 1px dashed var(--border); padding: 15px; border-radius: 12px; font-size: 12px; color: var(--text); line-height: 1.5; margin-bottom: 15px; }
+        .banner-slot { width: 100%; margin: 20px 0; border-radius: 15px; overflow: hidden; border: 1px solid var(--border); background: #000; line-height: 0; }
+        #pw { width: 100%; background: #1e293b; height: 10px; border-radius: 10px; display: none; margin: 20px 0; overflow: hidden; }
+        #pf { width: 0%; height: 100%; background: var(--red); transition: width 0.3s; }
+        .img-card { width: 100%; margin-bottom: 30px; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); background: #000; box-shadow: 0 20px 40px rgba(0,0,0,0.8); }
+        .img-card img { width: 100%; display: block; }
+    </style>
+</head>
+<body>
+
+<script defer src="https://crxcr2.com/cams-widget-ext/im_jerky?lang=en&mode=prerecorded&outlinkUrl=https://t.mbjrkmms.com/368319/6224/21719?bo=2779%2C2778%2C2777%2C2776%2C2775&po=6533&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0018"></script>
+
+<div id="gate" class="overlay">
+    <div class="modal-box">
+        <h1 style="margin:0;">18+ REQUIRED</h1>
+        <p style="color:var(--text); margin: 15px 0;">This site generates high-fidelity, uncensored adult content. By entering, you confirm you are 18 or older.</p>
+        <button onclick="enterSite()" class="btn">I AM 18+ / ENTER</button>
+        <button onclick="window.location.href='https://google.com'" class="btn btn-sec">EXIT SITE</button>
+    </div>
+</div>
+
+<div id="dailyMod" class="overlay" style="display:none;">
+    <div class="modal-box">
+        <h2>🎁 DAILY GIFT</h2>
+        <p style="color:var(--text);">You received 3 FREE COINS for visiting today!</p>
+        <button onclick="claimDaily()" class="btn">CLAIM 3 COINS</button>
+    </div>
+</div>
+
+<div id="legMod" class="overlay" style="display:none; z-index:100001;">
+    <div class="modal-box">
+        <h3 id="mT" style="color:white; margin:0;"></h3>
+        <div id="mB" class="legal-box"></div>
+        <button onclick="document.getElementById('legMod').style.display='none'" class="btn btn-sec">CLOSE</button>
+    </div>
+</div>
+
+<div id="mainUI">
+    <div class="banner-slot"><a href="https://t.amyfc.link/368319/779/22548" target="_blank"><img src="https://www.imglnkx.com/779/006611AX_FCAM_18_ALL_EN_71_L.gif" style="width:100%"></a></div>
+    
+    <div class="guide">
+        <b>HOW TO USE:</b><br>
+        1. Select your Style, Angle, and Effect.<br>
+        2. Describe your fantasy (slang like 'tits' or 'pussy' works).<br>
+        3. Use <b>Negative Prompt</b> to block things like 'clothes'.
+    </div>
+
+    <div onclick="refillShuffle()" class="btn" style="background:transparent; border:2px solid var(--red); color:var(--red);">💰 BALANCE: <span id="cb">0</span> | REFILL (+1)</div>
+
+    <label>Uncensored Prompt <span onclick="surprise()" style="float:right; color:var(--red); cursor:pointer;">[SURPRISE ME]</span></label>
+    <textarea id="pBox" rows="3" placeholder="Naked blonde, huge tits, wet pussy, mirror selfie..."></textarea>
+    
+    <label>Negative Prompt (Block)</label>
+    <input id="nBox" type="text" placeholder="clothes, bra, panties, blurry, muscle, deformed...">
+
+    <div class="grid">
+        <div><label>20 Professional Styles</label>
+            <select id="sBox">
+                <option value="high-fidelity realism, sharp focus, 8k, photorealistic skin pores">Realism (Raw)</option>
+                <option value="explicit hentai, sharp linework">Hentai</option>
+                <option value="90s vhs amateur tape grainy">90s VHS</option>
+                <option value="80s cel-shaded anime">80s Anime</option>
+                <option value="vintage polaroid photography">Polaroid</option>
+                <option value="vogue fashion studio">Magazine</option>
+                <option value="cyberpunk neon backlight">Cyberpunk</option>
+                <option value="film noir high contrast">Noir</option>
+                <option value="watercolor splash art">Watercolor</option>
+                <option value="charcoal sketch">Sketch</option>
+                <option value="oil painting masterpiece">Oil Painting</option>
+                <option value="unreal engine 5 3d render">3D Render</option>
+                <option value="pixel art 16-bit">Pixel Art</option>
+                <option value="gothic victorian">Gothic</option>
+                <option value="street candid photo">Street</option>
+                <option value="underwater photography">Underwater</option>
+                <option value="ethereal fantasy goddess">Fantasy</option>
+                <option value="vaporwave aesthetic">Vaporwave</option>
+                <option value="pop art bold">Pop Art</option>
+                <option value="military tactical">Tactical</option>
+            </select>
+        </div>
+        <div><label>Qty / Generation</label>
+            <select id="qBox">
+                <option value="1">1 Image</option>
+                <option value="2">2 Images</option>
+                <option value="3">3 Images</option>
+                <option value="4" selected>4 Images</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div><label>10 Angles</label>
+            <select id="aBox">
+                <option value="pov perspective">POV</option>
+                <option value="full length body shot, head to toe, wide shot, visible feet">Full Body</option>
+                <option value="view from behind, spread eagle">From Behind</option>
+                <option value="mirror selfie">Selfie</option>
+                <option value="intimate portrait">Portrait</option>
+                <option value="low angle spread">Low Angle</option>
+                <option value="high angle bird's eye">High Angle</option>
+                <option value="side profile">Side Profile</option>
+                <option value="macro detail">Macro</option>
+                <option value="wide aerial drone">Wide Aerial</option>
+            </select>
+        </div>
+        <div><label>10 Effects</label>
+            <select id="eBox">
+                <option value="">None</option>
+                <option value="glistening wet skin texture, oil">Wet Skin</option>
+                <option value="golden hour sunset glow">Sunlight</option>
+                <option value="neon rim lighting">Neon Glow</option>
+                <option value="thick cinematic fog">Foggy</option>
+                <option value="anamorphic lens flares">Lens Flare</option>
+                <option value="authentic film grain">Film Grain</option>
+                <option value="moody chiaroscuro shadows">Moody</option>
+                <option value="bokeh background blur">Bokeh</option>
+                <option value="windy hair motion">Windy</option>
+            </select>
+        </div>
+    </div>
+
+    <label>Orientation</label>
+    <select id="szBox">
+        <option value="720x1280">Portrait (9:16)</option>
+        <option value="1280x720">Landscape (16:9)</option>
+        <option value="1024x1024">Square (1:1)</option>
+    </select>
+
+    <div id="statusText" style="text-align:center; font-weight:bold; margin-top:15px; display:none;">Ready</div>
+    <div id="pw"><div id="pf"></div></div>
+    
+    <button id="genBtn" onclick="startGen()" class="btn">GENERATE UNCENSORED</button>
+
+    <div class="banner-slot"><a href="https://t.ajrkm.link/368319/3785/0" target="_blank"><img src="https://www.imglnkx.com/3785/010770D_GDAT_18_ALL_EN_71_L.gif" style="width:100%"></a></div>
+
+    <div id="gal"></div>
+
+    <div class="banner-slot"><a href="https://t.acrsmartcam.com/368319/3611/8425" target="_blank"><img src="https://www.imglnkx.com/3785/005838A_GDAT_18_ALL_EN_71_L.gif" style="width:100%"></a></div>
+
+    <center style="font-size:11px; color:#64748b; padding: 20px 0 60px 0;">
+        <span onclick="openLeg('Terms')" style="cursor:pointer; text-decoration:underline;">Terms of Service</span> | 
+        <span onclick="openLeg('Privacy')" style="cursor:pointer; text-decoration:underline;">Privacy Policy</span>
+    </center>
+</div>
+
+<script>
+let coins = parseInt(localStorage.getItem('coins')) || 0;
+const today = new Date().toLocaleDateString();
+
+function updateDisplay() { document.getElementById('cb').innerText = coins; }
+updateDisplay();
+
+function enterSite() {
+    document.getElementById('gate').style.display='none';
+    document.getElementById('mainUI').style.display='block';
+    if(localStorage.getItem('lastClaimV180') !== today) { document.getElementById('dailyMod').style.display='flex'; }
+}
+
+function claimDaily() {
+    coins += 3; // HARD FIXED
+    localStorage.setItem('coins', coins); localStorage.setItem('lastClaimV180', today);
+    updateDisplay(); document.getElementById('dailyMod').style.display='none';
+}
+
+function refillShuffle() {
+    window.open("https://t.amyfc.link/368319/779/22548", '_blank');
+    coins += 1; localStorage.setItem('coins', coins); updateDisplay();
+}
+
+function openLeg(type) {
+    const t = document.getElementById('mT'), b = document.getElementById('mB');
+    if(type === 'Terms') {
+        t.innerText = "Terms of Service";
+        b.innerHTML = `<b>1. AGE:</b> Strictly 18+. <b>2. GENERATION:</b> All images are fictional AI constructs. No real people are depicted. <b>3. COMPLIANCE:</b> Users must not prompt for illegal content. <b>4. COINS:</b> Virtual currency with no real value. <b>5. LIMITATION:</b> We are not liable for user-generated content.`;
+    } else {
+        t.innerText = "Privacy Policy";
+        b.innerHTML = `<b>1. COOKIES:</b> We use local browser storage for your coin balance. <b>2. LOGS:</b> No personal data is collected or tracked. <b>3. EXTERNAL:</b> Links point to 3rd party affiliates. <b>4. STORAGE:</b> Images are not saved on our servers; they clear on page refresh.`;
+    }
+    document.getElementById('legMod').style.display = 'flex';
+}
+
+async function startGen() {
+    const q = parseInt(document.getElementById('qBox').value);
+    if(coins < q) return alert("Refill coins for " + q + " images!");
+    coins -= q; localStorage.setItem('coins', coins); updateDisplay();
+
+    const btn = document.getElementById('genBtn');
+    const status = document.getElementById('statusText');
+    const bar = document.getElementById('pf');
+    btn.disabled = true;
+    document.getElementById('pw').style.display = 'block';
+    status.style.display = 'block';
+    
+    const sz = document.getElementById('szBox').value.split('x');
+
+    for(let i=0; i<q; i++) {
+        if(i > 0) {
+            let wait = 18;
+            while(wait > 0) {
+                status.innerText = `Detailing Anatomy... (${wait}s)`;
+                await new Promise(r => setTimeout(r, 1000));
+                wait--;
+            }
+        }
+        
+        status.innerText = `Rendering Final Image ${i+1}/${q}...`;
+        let pr = 0; const itv = setInterval(() => { pr += (98-pr)*0.1; bar.style.width = pr+'%'; }, 150);
+
+        let uP = document.getElementById('pBox').value.toLowerCase();
+        
+        // SLANG & ANATOMY ENGINE (Invisible to User)
+        uP = uP.replace(/tits|boobs|jugs/g, "((colossal heavy breasts, protruding hard nipples, high-detail areola, sagging weight))");
+        uP = uP.replace(/pussy|vagina/g, "((explicitly exposed vulva, wet labia lips, hairless pussy, detailed pink flesh))");
+        uP = uP.replace(/ass|booty/g, "((massive round oiled buttocks, wide hips, round booty))");
+        uP = uP.replace(/nude|uncensored|naked/g, "((completely unclad, no clothes, full nudity, explicitly bare skin, naked body))");
+
+        const fullP = `${uP}, ${document.getElementById('sBox').value}, ${document.getElementById('aBox').value}, ${document.getElementById('eBox').value}, hyper-realistic skin texture, 8k, ultra-sharp focus, masterpiece`;
+        
+        const negInput = document.getElementById('nBox').value;
+        const neg = `(censored, blur, smudge, bar, clothing, underwear, panties, bra, bikini, fabric, muscle, masculine, extra limbs, distorted:1.4), ${negInput}`;
+        
+        const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(fullP)}?width=${sz[0]}&height=${sz[1]}&seed=${Math.floor(Math.random()*1e9)}&nologo=true&model=flux&negative=${encodeURIComponent(neg)}`;
+        
+        const card = document.createElement('div');
+        card.className = 'img-card';
+        const img = new Image();
+        img.src = url;
+        card.appendChild(img);
+        document.getElementById('gal').prepend(card);
+        
+        await new Promise(r => { img.onload = r; img.onerror = r; });
+        clearInterval(itv);
+        bar.style.width = '100%';
+    }
+    status.style.display = 'none'; btn.disabled = false; document.getElementById('pw').style.display = 'none';
+}
+
+function surprise() {
+    const s = [
+        "Naked blonde spread on bed with massive tits and a wet pussy, mirror selfie",
+        "Curvy redhead, huge jugs, no clothes, standing full body head to toe nude",
+        "Skinny brunette, colossal boobs, spread pussy from behind, high fidelity realism",
+        "Stunning asian goddess, massive tits, wet pussy, shower shot, glistening skin"
+    ];
+    document.getElementById('pBox').value = s[Math.floor(Math.random()*s.length)];
+}
+</script>
+</body>
+</html>
