@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Album Test</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: white;
+  text-align: center;
+}
+
+/* AGE GATE */
+#ageGate {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+#ageGate button {
+  margin: 10px;
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.enterBtn {
+  background: #ff4da6;
+  color: white;
+}
+
+.exitBtn {
+  background: #444;
+  color: white;
+}
+
+.banner {
+  margin: 15px 0;
+}
+
+.album {
+  margin: 30px 0;
+}
+
+.album img {
+  max-width: 95%;
+  border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- AGE GATE -->
+<div id="ageGate">
+  <h2>You must be 18+ to enter</h2>
+  <p>By entering, you confirm you are at least 18 years old.</p>
+  <button class="enterBtn" onclick="enterSite()">I am 18+</button>
+  <button class="exitBtn" onclick="leaveSite()">Exit</button>
+</div>
+
+<!-- TOP BANNER -->
+<div class="banner">
+  <!-- PASTE TOP BANNER AD CODE HERE -->
+</div>
+
+<!-- ALBUM -->
+<div class="album">
+  <a href="https://lh3.googleusercontent.com/pw/AP1GczPKqTuLzwm1ZHrgs3CMrvRi823qzDtHCmIE2zC82SR208V5gUiBy_lrHompyPZ3V69anOor6A_86nPRAQmOw2Ptvpggy0nCv-r7v02pIwRJyddCYro=w2400?source=screenshot.guru">
+    <img src="https://lh3.googleusercontent.com/pw/AP1GczPKqTuLzwm1ZHrgs3CMrvRi823qzDtHCmIE2zC82SR208V5gUiBy_lrHompyPZ3V69anOor6A_86nPRAQmOw2Ptvpggy0nCv-r7v02pIwRJyddCYro=w512-h315-p-k">
+  </a>
+</div>
+
+<!-- BOTTOM BANNER 1 -->
+<div class="banner">
+  <!-- PASTE BOTTOM BANNER 1 CODE HERE -->
+</div>
+
+<!-- BOTTOM BANNER 2 -->
+<div class="banner">
+  <!-- PASTE BOTTOM BANNER 2 CODE HERE -->
+</div>
+
+<!-- CHAT HEAD SCRIPT -->
+<script defer src="https://crxcr2.com/cams-widget-ext/im_jerky?lang=en&mode=prerecorded&outlinkUrl=https://t.acrsmartcam.com/368319/9945/37696?bo=2779%2C2778%2C2777%2C2776%2C2775&file_id=657082&po=6533&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0018"></script>
+
+<script>
+function enterSite() {
+  document.getElementById("ageGate").style.display = "none";
+  localStorage.setItem("ageVerified", "true");
+}
+
+function leaveSite() {
+  window.location.href = "https://google.com";
+}
+
+window.onload = function() {
+  if (localStorage.getItem("ageVerified") === "true") {
+    document.getElementById("ageGate").style.display = "none";
+  }
+};
+</script>
+
+</body>
+</html>
